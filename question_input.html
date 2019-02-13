@@ -49,7 +49,11 @@
     </section>
 
     <div id="nokori-button" class="btn-submit">
-      <p class="nokori-item"><em>必須項目は残り <strong><span class="nokori-count">10</span></strong> 件です</em></p>
+      <div class="nokori-item"><em>必須項目は残り <strong><span class="nokori-count">10</span></strong> 件です</em>
+      
+      </div>
+      
+							
     </div>
 
     <section class="box1">
@@ -95,7 +99,7 @@
             <td><div class="genderBox" id="genderBox">
                 <ul>
                   <li class="disI MR20">
-                    <input id="sex1" type="radio" value="1" name="sex" checked="checked">
+                    <input id="sex1" type="radio" value="1" name="sex">
                     <label for="sex1" class="radio-label"> 男性</label>
                   </li>
                   <li class="disI MR20">
@@ -429,7 +433,9 @@
                   <label for="annai1_2" class="radio-label">いいえ</label>
                 </li>
               </ul>
-              <p class="error-text" style="display: none;">回答は必須項目です。</p></td>
+              <p class="error-text" style="display: none;">回答は必須項目です。</p>
+              <p id="annai1_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
+              </td>
           </tr>
         </table>
       </div>
@@ -458,7 +464,7 @@
                     <label for="q5a4" class="radio-label">高まった</label>
                   </li>
                   <li class="disIB MR15">
-                    <input type="radio" name="q5" id="q5a5" value="radio" checked="checked">
+                    <input type="radio" name="q5" id="q5a5" value="radio" >
                     <label for="q5a5" class="radio-label">変化ない</label>
                   </li>
                   <li class="disIB MR15">
@@ -466,7 +472,8 @@
                     <label for="q5a6" class="radio-label">低くなった</label>
                   </li>
                 </ul>
-                <p class="error-text" style="display: none;">回答は必須項目です。</p></td>
+                <p id="q5_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
+                </td>
             </tr>
           </table>
         </div>
@@ -1375,7 +1382,7 @@
               <th>現在お付き合いのあるSUBARU販売会社はありますか<span class="icon-must">[ 必須 ]</span></th>
               <td><ul>
                   <li class="disIB MR15">
-                    <input type="radio" name="q6" id="q5a9" value="radio" checked="checked">
+                    <input type="radio" name="q6" id="q5a9" value="radio">
                     <label for="q5a9" class="radio-label">ある</label>
                   </li>
                   <li class="disIB MR15">
@@ -1383,26 +1390,27 @@
                     <label for="q5a10" class="radio-label">ない</label>
                   </li>
                 </ul>
-                <p class="error-text" style="display: none;">回答は必須項目です。</p></td>
+                <p id="q6_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
+                </td>
             </tr>
             <tr>
               <th>「ある」を選んだ方は販売会社名をお聞かせください<span class="icon-must">[ 必須 ]</span></th>
               <td><div class="select-box">
-                  <select class="XXX" id="XXX5" name="XXX3">
+                  <select class="XXX" id="XXX5" name="q6hanabai">
                     <option value="">選択してください</option>
                     <option value="0001">XXXX</option>
                   </select>
-                  <p class="error-text" style="display: none;">回答は必須項目です。</p>
+                <p id="q6hanabai_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
                 </div></td>
             </tr>
             <tr>
               <th>「ある」を選んだ方は営業店名をお聞かせください<span class="icon-must">[ 必須 ]</span></th>
               <td><div class="select-box">
-                  <select class="XXX" id="XXX4" name="XXX3">
+                  <select class="XXX" id="XXX4" name="q6shop">
                     <option value="">選択してください</option>
                     <option value="0001">XXXX</option>
                   </select>
-                  <p class="error-text" style="display: none;">回答は必須項目です。</p>
+                <p id="q6shop_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
                 </div></td>
             </tr>
           </table>
@@ -1431,18 +1439,18 @@
                       <label for="purchase_time4" class="radio-label">次回車検時 </label>
                     </li>
                     <li class=" disIB">
-                      <input type="radio" name="purchase_time" id="purchase_time5" value="radio" checked="checked">
+                      <input type="radio" name="purchase_time" id="purchase_time5" value="radio">
                       <label for="purchase_time5" class="radio-label">未定 </label>
                     </li>
                   </ul>
-                  <p class="error-text" style="display: none;">回答は必須項目です。</p>
+                  <p id="purchase_time_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
                 </div></td>
             </tr>
             <tr>
               <th>次回お車を購入される際、SUBARU車をご検討になる度合をお聞かせ下さい<span class="icon-must">[ 必須 ]</span></th>
               <td><ul>
                   <li class="disIB">
-                    <input type="radio" name="purchase_degree" id="purchase_degree1" value="radio" checked="checked">
+                    <input type="radio" name="purchase_degree" id="purchase_degree1" value="radio">
                     <label for="purchase_degree1" class="radio-label">優先的に検討したい </label>
                   </li>
                   <li class="disIB">
@@ -1458,13 +1466,13 @@
                     <label for="purchase_degree4" class="radio-label">検討の意思はない </label>
                   </li>
                 </ul>
-                <p class="error-text" style="display: none;">回答は必須項目です。</p></td>
+                  <p id="purchase_degree_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p></td>
             </tr>
             <tr>
               <th>SUBARUを家族や友人にお勧めしたいと思いますか。「すすめたい」～「すすめたくない」の間でお答えください<span class="icon-must">[ 必須 ]</span></th>
               <td><ul>
                   <li class="disIB spDisB MR15">
-                    <input type="radio" name="q7" id="q5a1" value="radio" checked="checked">
+                    <input type="radio" name="q7" id="q5a1" value="radio">
                     <label for="q5a1" class="radio-label">すすめたい </label>
                   </li>
                   <li class="disIB spDisB MR15">
@@ -1484,7 +1492,7 @@
                     <label for="q5a3" class="radio-label">すすめたくない</label>
                   </li>
                 </ul>
-                <p class="error-text" style="display: none;">回答は必須項目です。</p></td>
+                  <p id="q7_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p></td>
             </tr>
           </table>
         </div>
@@ -1619,6 +1627,13 @@
           <p id="conf_error_front" class="error-text" style="display: none;">必須項目です。</p>
         </div>
       </div>
+      <dl class="nokori-txt">
+								<dt>以下の項目を入力してください。</dt>
+								<dd>
+									<ul class="nokori-list">
+									</ul>
+								</dd>
+							</dl>
       <ul class="form-btn">
         <li>
           <div class="btn-next dis">
@@ -1634,6 +1649,7 @@
   </footer>
 </div>
 <!--/.wrapper--> 
+
 
 <script type="text/javascript" src="common/js/jquery.3.2.1.min.js"></script> 
 <script type="text/javascript" src="common/js/jquery.autoKana.js"></script>

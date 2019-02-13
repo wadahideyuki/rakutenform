@@ -36,26 +36,14 @@ $(function () {
   //
   // 職業
   //
-  $("select[name='job']").on('focusout',function (e) {
+  $("select[name='job']").on('focusout change',function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
     validate_job(val);
     showRequireItemCount();
   });
-
-  //
-  // イベント
-  //
-  $("select[name='event']").focusout(function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var val = $(this).val();
-    validate_event(val);
-    showRequireItemCount();
-  });
-
-  //
+  
   // パスワード
   //
   $("input[name='password']").focusout(function (e) {
@@ -170,9 +158,10 @@ $(function () {
   //
   $("input[name='zip1']").keyup(function (e) {
     return validate_zip();
+    showRequireItemCount();
   });
   $("input[name='zip1']").focusout(function (e) {
-    return validate_zip();
+    validate_zip();
     showRequireItemCount();
   });
 
@@ -287,7 +276,23 @@ $(function () {
   });
 
   
-  
+
+  //
+  // イベント
+  //
+  $("select[name='event']").on('focusout change',function (e) {
+    if (e.keyCode == 9) {return true;}
+
+    var val = $(this).val();
+    validate_event(val);
+    showRequireItemCount();
+  });
+  $("input[name='q5']").on('change',function (e) {
+    var val = $(this).val();
+    validate_q5(val);
+    showRequireItemCount();
+  });
+
   
   //
   // メーカー
@@ -351,6 +356,50 @@ $(function () {
   });
 
 
+  //
+  // SUBARUとのお付き合い
+  //
+  $("input[name='q6']").on('change',function (e) {
+    var val = $(this).val();
+    validate_q6(val);
+    showRequireItemCount();
+  });
+  $("select[name='q6hanabai']").on('focusout change',function (e) {    
+    var val = $(this).val();
+    validate_q6hanabai(val);
+    console.log(val)
+    showRequireItemCount();
+  });
+  $("select[name='q6shop']").on('focusout change',function (e) {    
+    var val = $(this).val();
+    validate_q6shop(val);
+    showRequireItemCount();
+  });
+
+  //
+  // 次回購入時のご意見
+  //
+  $("input[name='purchase_time']").on('change',function (e) {
+    var val = $(this).val();
+    validate_purchase_time(val);
+    showRequireItemCount();
+  });
+  $("input[name='purchase_degree']").on('change',function (e) {
+    var val = $(this).val();
+    validate_purchase_degree(val);
+    showRequireItemCount();
+  });
+  $("input[name='q7']").on('change',function (e) {
+    var val = $(this).val();
+    validate_q7(val);
+    showRequireItemCount();
+  });
+
+  
+
+  
+  
+  
 
   //
   // 確認画面ボタン
