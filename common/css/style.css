@@ -1,0 +1,1607 @@
+@charset "UTF-8";
+/* CSS Document */
+/* リセット
+---------------------------------------------------- */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600");
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr {
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 100%; }
+
+fieldset, img {
+  border: 0;
+  vertical-align: top; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal; }
+
+li {
+  list-style: none; }
+
+caption, th {
+  text-align: left; }
+
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%;
+  font-weight: normal; }
+
+q:before, q:after {
+  content: ''; }
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal; }
+
+br {
+  letter-spacing: normal; }
+
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align: text-top; }
+
+sub {
+  vertical-align: text-bottom; }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*to enable resizing for IE*/
+input, textarea, select {
+  *font-size: 100%; }
+
+/* ページ共通
+---------------------------------------------------- */
+html {
+  color: #333;
+  font-size: 10px;
+  letter-spacing: 0.05em; }
+  @media screen and (max-width: 767px) {
+    html {
+      font-size: 1.6vw; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif; }
+
+*:first-child + html body {
+  font-size: 87%; }
+
+hr {
+  border: none; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: underline; }
+
+.clearfix:after {
+  content: ".";
+  /* 新しい要素を作る */
+  display: block;
+  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden; }
+
+.clearfix {
+  min-height: 1px; }
+
+* html .clearfix {
+  height: 1px;
+  /*\*/
+     /*/
+height: auto;
+overflow: hidden;
+/**/ }
+
+.clear {
+  clear: both; }
+
+.none {
+  margin: 0;
+  padding: 0;
+  border: none; }
+
+/*--------------------------------------
+ レイアウト
+---------------------------------------*/
+.wrapper {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media screen and (max-width: 767px) {
+    .wrapper {
+      margin-left: 5.3333333333%;
+      margin-right: 5.3333333333%; } }
+
+.header {
+  margin-bottom: 70px; }
+  .header .logo {
+    width: 130px;
+    transition: 0.3s; }
+    .header .logo:hover {
+      opacity: 0.7;
+      text-decoration: none; }
+    .header .logo img {
+      width: 100%; }
+  @media screen and (max-width: 767px) {
+    .header {
+      margin-bottom: 10.447761194%; }
+      .header .logo {
+        width: 24vw;
+        padding-top: 2.2666666667vw; } }
+
+.footer {
+  margin-top: 120px;
+  margin-bottom: 60px;
+  text-align: center; }
+  .footer .logo {
+    width: 120px;
+    margin: 0 auto 10px; }
+    .footer .logo img {
+      width: 100%; }
+  .footer #copyright {
+    font-size: 1.0rem; }
+  @media screen and (max-width: 767px) {
+    .footer {
+      margin-top: 16vw;
+      margin-bottom: 6.6666666667vw; }
+      .footer .logo {
+        width: 28.4vw;
+        margin-bottom: 4.4vw; }
+      .footer #copyright {
+        font-size: 2.0rem; } }
+
+/*--------------------------------------
+ 要素
+---------------------------------------*/
+.nokori-item {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #2d9882;
+  position: fixed;
+  top: 20px;
+  right: 20px; }
+  .nokori-item em strong {
+    color: #2d9882;
+    font-size: 1.5em; }
+
+.error-text {
+  background: #FF0004;
+  padding: 0.3em 0.5em !important;
+  border-radius: 5px;
+  display: inline-block;
+  color: #FFF;
+  margin-top: 4px;
+  font-size: 17px;
+  font-weight: bold; }
+  .error-text.err2 {
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 2rem; }
+    @media screen and (max-width: 767px) {
+      .error-text.err2 {
+        font-size: 2.4rem; } }
+
+.lh20 .error-text.err2 {
+  background-color: #fff;
+  color: #FF0004; }
+
+a {
+  color: #2d9882;
+  text-decoration: underline; }
+  a:hover {
+    text-decoration: none; }
+  a.arrow {
+    display: inline-block;
+    position: relative; }
+    a.arrow:before {
+      content: "";
+      width: 0.4em;
+      height: 0.4em;
+      display: inline-block;
+      border-top: 2px solid #2d9882;
+      border-right: 2px solid #2d9882;
+      transform: rotate(45deg);
+      margin-right: 0.5em; }
+
+.icon-must {
+  font-weight: normal !important; }
+  .icon-must.nini {
+    color: #333 !important; }
+
+img {
+  max-width: 100%; }
+
+section + section {
+  margin-top: 80px; }
+@media screen and (max-width: 767px) {
+  section + section {
+    margin-top: 13.3333333333vw; } }
+
+.dekiur {
+  width: 90%;
+  padding: 20px 0 0 0;
+  margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    .dekiur {
+      width: 100%; } }
+
+/* フォーム */
+button {
+  width: 100%;
+  border: none; }
+
+.input1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fafcfc;
+  height: 40px;
+  padding: 5px 7px 2px;
+  border: 1px solid #2d9882;
+  border-radius: 0;
+  box-sizing: border-box; }
+  @media screen and (max-width: 767px) {
+    .input1 {
+      height: auto;
+      padding: 2.6666666667vw; } }
+
+.txArea1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 12.5em;
+  padding: 15px 20px;
+  border: 1px solid #2d9882;
+  border-radius: 0;
+  box-sizing: border-box;
+  resize: none; }
+  @media screen and (max-width: 767px) {
+    .txArea1 {
+      height: 15em;
+      padding: 4.6666666667vw 5.3333333333vw; } }
+
+.rdo1 input[type="radio"] {
+  display: none; }
+.rdo1 label {
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+  transition: 0.3s; }
+  .rdo1 label:hover {
+    opacity: 0.7;
+    text-decoration: none; }
+  .rdo1 label span {
+    display: inline-block;
+    background-color: #fff;
+    padding: 4px;
+    border: 1px solid #2d9882;
+    border-radius: 50px;
+    vertical-align: top; }
+    .rdo1 label span:before {
+      content: "";
+      display: inline-block;
+      background-color: #fff;
+      width: 10px;
+      height: 10px;
+      border-radius: 50px;
+      vertical-align: top; }
+.rdo1 input[type="radio"]:checked + label span:before {
+  background-color: #2d9882; }
+@media screen and (max-width: 767px) {
+  .rdo1 label span {
+    padding: 0.8vw;
+    border-width: 0.2666666667vw; }
+    .rdo1 label span:before {
+      width: 1.6vw;
+      height: 1.6vw; } }
+
+.IPassBox {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto; }
+  .IPassBox > table {
+    width: 100%;
+    font-size: 1.4rem; }
+    .IPassBox > table tr th {
+      padding-top: 12px;
+      vertical-align: top; }
+    .IPassBox > table tr td {
+      width: 480px; }
+      .IPassBox > table tr td p {
+        margin-top: 10px; }
+    .IPassBox > table tr + tr th {
+      padding-top: 47px; }
+    .IPassBox > table tr + tr td {
+      padding-top: 35px; }
+  @media screen and (max-width: 767px) {
+    .IPassBox > table {
+      display: block;
+      font-size: 2.8rem; }
+      .IPassBox > table tbody {
+        display: block; }
+      .IPassBox > table tr {
+        display: block; }
+        .IPassBox > table tr th {
+          display: block;
+          padding-top: 0; }
+        .IPassBox > table tr td {
+          display: block;
+          width: auto;
+          margin-top: 0.6666666667vw; }
+          .IPassBox > table tr td p {
+            margin-top: 1.3333333333vw;
+            font-size: 2.4rem; }
+        .IPassBox > table tr + tr th {
+          padding-top: 6.6666666667vw; }
+        .IPassBox > table tr + tr td {
+          padding-top: 0; } }
+
+.sijoCarBox {
+  max-width: none; }
+  .sijoCarBox ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4px; }
+    .sijoCarBox ul > li {
+      width: 25%;
+      margin-bottom: 8px;
+      padding: 0 4px;
+      box-sizing: border-box; }
+      .sijoCarBox ul > li input[type="radio"] {
+        display: none; }
+      .sijoCarBox ul > li label {
+        display: block;
+        border: 1px solid #dedede;
+        transition: 0.3s; }
+        .sijoCarBox ul > li label:hover {
+          opacity: 0.7;
+          text-decoration: none; }
+        .sijoCarBox ul > li label p {
+          background-color: #dedede;
+          padding: 5px; }
+  @media screen and (max-width: 767px) {
+    .sijoCarBox ul {
+      margin: -2vw; }
+      .sijoCarBox ul > li {
+        width: 50%;
+        margin-bottom: 4vw;
+        padding: 0 2vw; }
+        .sijoCarBox ul > li label p {
+          padding: 0.8vw; } }
+
+.sijoHyokaBox {
+  max-width: 680px;
+  margin: auto; }
+  .sijoHyokaBox table {
+    border-collapse: separate;
+    border-spacing: 2px 12px;
+    table-layout: fixed;
+    width: 100%;
+    font-size: 1.4rem; }
+    .sijoHyokaBox table th {
+      width: 160px;
+      text-align: center; }
+    .sijoHyokaBox table td {
+      vertical-align: middle; }
+    .sijoHyokaBox table thead {
+      background-color: #c2c2c2;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: bold; }
+      .sijoHyokaBox table thead td {
+        padding: 2px; }
+    .sijoHyokaBox table tbody tr:nth-child(odd) {
+      background-color: #dedede; }
+    .sijoHyokaBox table tbody th[colspan="6"] {
+      width: auto; }
+    .sijoHyokaBox table tbody td {
+      padding: 12px; }
+    .sijoHyokaBox table tbody dl {
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px; }
+      .sijoHyokaBox table tbody dl dt {
+        flex-shrink: 0;
+        width: 160px; }
+        .sijoHyokaBox table tbody dl dt span {
+          display: inline-block;
+          margin-right: 1em;
+          vertical-align: middle; }
+        .sijoHyokaBox table tbody dl dt small {
+          display: inline-block;
+          color: #999;
+          font-size: 0.8571428571em;
+          vertical-align: middle; }
+      .sijoHyokaBox table tbody dl dd {
+        width: 100%;
+        padding: 0 10px; }
+  @media screen and (max-width: 767px) {
+    .sijoHyokaBox {
+      max-width: none; }
+      .sijoHyokaBox table {
+        border-spacing: 1px 5px;
+        font-size: 2.6rem; }
+        .sijoHyokaBox table th {
+          width: 28vw; }
+        .sijoHyokaBox table thead {
+          font-size: 3.0rem; }
+          .sijoHyokaBox table thead td {
+            padding: 0.6%; }
+        .sijoHyokaBox table tbody td {
+          padding: 0.8vw; }
+        .sijoHyokaBox table tbody dl {
+          display: block;
+          padding: 0 2.6666666667vw 5.3333333333vw;
+          text-align: left; }
+          .sijoHyokaBox table tbody dl dt {
+            flex-shrink: 0;
+            width: auto; }
+            .sijoHyokaBox table tbody dl dt small {
+              font-size: 0.9230769231em; }
+          .sijoHyokaBox table tbody dl dd {
+            width: auto;
+            padding: 0 0; } }
+
+/*--------------------------------------
+ パーツ
+---------------------------------------*/
+/* インナー */
+.inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media screen and (max-width: 767px) {
+    .inner {
+      padding-left: 4.6875%;
+      padding-right: 4.6875%; } }
+
+/* テキストカラー */
+.txClrMain {
+  color: #2d9882; }
+
+.txClrRed {
+  color: #ee3333; }
+
+/* タイトル */
+.ttl1 {
+  margin-bottom: 1.4285714286em;
+  color: #2d9882;
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.7714285714; }
+  @media screen and (max-width: 767px) {
+    .ttl1 {
+      margin-bottom: 1.4583333333em;
+      font-size: 4.8rem;
+      line-height: 1.5833333333; }
+      .ttl1 span {
+        font-size: 3.6rem; } }
+  .ttl1.type2 {
+    margin-bottom: 1.3333333333em;
+    font-size: 3.0rem; }
+    @media screen and (max-width: 767px) {
+      .ttl1.type2 {
+        font-size: 3.6rem;
+        line-height: 1.6666666667; } }
+
+.ttl2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25em;
+  font-size: 1.6rem;
+  font-weight: bold; }
+  .ttl2:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: 10px;
+    border-style: solid;
+    border-width: 0.3125em 0px 0.3125em 0.375em;
+    border-color: transparent transparent transparent #333; }
+    @media all and (-ms-high-contrast: none) {
+      .ttl2:before {
+        margin-top: -0.4375em; } }
+  @media screen and (max-width: 767px) {
+    .ttl2 {
+      margin-bottom: 1em;
+      font-size: 2.8rem; }
+      .ttl2:before {
+        margin-right: 1.3333333333vw; } }
+
+.ttl3 {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  color: #2d9882;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #2d9882; }
+  .ttl3 span {
+    display: inline-block;
+    margin-right: 1em;
+    vertical-align: middle; }
+  .ttl3 small {
+    display: inline-block;
+    font-size: 0.5454545455em;
+    vertical-align: middle; }
+  .ttl3.type2 {
+    margin-bottom: 60px;
+    padding-bottom: 10px; }
+  @media screen and (max-width: 767px) {
+    .ttl3 {
+      margin-bottom: 1.6666666667em;
+      font-size: 3.2rem;
+      padding-bottom: 0.8333333333em;
+      border-bottom-width: 0.5333333333vw; }
+      .ttl3 small {
+        font-size: 0.75em; }
+      .ttl3.type2 {
+        font-size: 3.6rem; } }
+
+.fontS2 {
+  font-size: 1.3rem;
+  color: #333 !important; }
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  background-color: #2d9882;
+  padding: 30px 15px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s; }
+  .btn:hover {
+    opacity: 0.7;
+    text-decoration: none; }
+  .btnWrap > .btn {
+    display: block; }
+  .btn span {
+    display: inline-block; }
+    .btn span:after {
+      content: "";
+      display: inline-block;
+      width: 0.7em;
+      height: 0.7em;
+      margin-top: -0.2em;
+      margin-left: 10px;
+      vertical-align: middle;
+      border-style: solid;
+      border-width: 0.1875em 0.1875em 0 0;
+      border-color: #fff #fff transparent transparent;
+      box-sizing: border-box;
+      transform: rotate(45deg); }
+    .btn span.arwL:before {
+      content: "";
+      display: inline-block;
+      width: 0.7em;
+      height: 0.7em;
+      margin-top: -0.2em;
+      margin-right: 10px;
+      vertical-align: middle;
+      border-style: solid;
+      border-width: 0.1875em 0.1875em 0 0;
+      border-color: #fff #fff transparent transparent;
+      box-sizing: border-box;
+      transform: rotate(-135deg); }
+    .btn span.arwL:after {
+      content: normal; }
+  .btn.sz2 {
+    padding: 22px 15px 18px;
+    font-size: 1.8rem; }
+  .btn.clr2 {
+    background-color: #a5aaaa; }
+  @media screen and (max-width: 767px) {
+    .btn {
+      padding: 3.3333333333vw 3.3333333333vw;
+      font-size: 2.4rem;
+      line-height: 1.6666666667; }
+      .btn.spType2 {
+        position: relative; }
+        .btn.spType2 span:after {
+          margin: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 3.0666666667vw; }
+      .btn.sz2 {
+        padding: 4.2666666667vw 3.3333333333vw;
+        font-size: 2.8rem; } }
+
+/* ボタンの並び */
+.btns1 {
+  display: flex;
+  justify-content: center; }
+  .btns1 .btn {
+    width: 300px;
+    box-sizing: border-box; }
+    .btns1 .btn + .btn {
+      margin-left: 30px; }
+  @media screen and (max-width: 767px) {
+    .btns1 {
+      display: block; }
+      .btns1 .btn {
+        width: 90%; }
+        .btns1 .btn + .btn {
+          margin: 7% 0 0; }
+      .btns1.spDisF {
+        flex-direction: column-reverse;
+        align-items: center; }
+        .btns1.spDisF .btn + .btn {
+          margin: 0 0 5.3333333333vw; } }
+
+/* アイコン */
+.icnMail:before {
+  display: none;
+  font-family: "Font Awesome 5 Solid";
+  content: ""; }
+.icnMail svg {
+  margin-right: 7px;
+  color: inherit; }
+
+/* リスト */
+.notes1 > li {
+  padding-left: 1.6em;
+  position: relative; }
+  .notes1 > li:before {
+    content: "※";
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+/* 状態 */
+.dis_flex_block {
+  display: flex; }
+  @media screen and (max-width: 767px) {
+    .dis_flex_block {
+      display: block; } }
+
+.formB {
+  padding-top: 30px; }
+  .formB .qBox {
+    padding: 30px 0;
+    border-top: 1px solid #EEE; }
+
+/* 箱 */
+.box1 {
+  padding: 10%;
+  border: 1px solid #2d9882; }
+  .box1.size2 {
+    padding-left: 16%;
+    padding-right: 16%; }
+  @media screen and (max-width: 767px) {
+    .box1 {
+      padding: 5% !important; } }
+  .box1 .btG {
+    border-top: 1px solid #2d9882;
+    padding: 5rem 0 0; }
+    @media screen and (max-width: 767px) {
+      .box1 .btG {
+        padding: 12% 0 0; } }
+    .box1 .btG .type3 {
+      font-size: 2.3rem;
+      line-height: 1;
+      margin-bottom: 0; }
+      @media screen and (max-width: 767px) {
+        .box1 .btG .type3 {
+          font-size: 3.6rem;
+          margin-top: 4vw; } }
+    .box1 .btG ul {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5rem; }
+      @media screen and (max-width: 767px) {
+        .box1 .btG ul {
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          margin-top: 7.5vw; } }
+      .box1 .btG ul li {
+        width: 31.34%;
+        text-align: left; }
+        @media screen and (max-width: 767px) {
+          .box1 .btG ul li {
+            width: 100%; } }
+        .box1 .btG ul li img {
+          width: 100%; }
+        .box1 .btG ul li span {
+          display: block;
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin: 2rem 0 1.4rem;
+          line-height: 1; }
+          @media screen and (max-width: 767px) {
+            .box1 .btG ul li span {
+              font-size: 3.2rem;
+              line-height: 1.4;
+              margin: 3rem 0 1.5rem;
+              text-align: center; } }
+        .box1 .btG ul li p {
+          font-size: 1.4rem;
+          line-height: 1.4; }
+          @media screen and (max-width: 767px) {
+            .box1 .btG ul li p {
+              font-size: 3.2rem;
+              line-height: 1.6; } }
+      .box1 .btG ul li + li {
+        position: relative; }
+        @media screen and (max-width: 767px) {
+          .box1 .btG ul li + li {
+            margin-top: 8rem; }
+            .box1 .btG ul li + li:before {
+              position: absolute;
+              content: "";
+              top: -6vw;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background: #6c6c6c; } }
+    .box1 .btG address {
+      font-size: 1.6rem;
+      font-weight: bold;
+      line-height: 1.75;
+      margin: 3rem 0; }
+      @media screen and (max-width: 767px) {
+        .box1 .btG address {
+          font-size: 3.2rem;
+          margin: 7vw 0 10vw;
+          line-height: 1.6; } }
+    .box1 .btG .spS {
+      display: none; }
+      @media screen and (max-width: 767px) {
+        .box1 .btG .spS {
+          display: block; } }
+    .box1 .btG iframe {
+      margin-bottom: 3%; }
+      @media screen and (max-width: 767px) {
+        .box1 .btG iframe {
+          margin-bottom: 8vw; } }
+
+.aboutSubaruId {
+  border: 1px solid #2d9882;
+  padding: 60px; }
+  .aboutSubaruId.type2 {
+    background-color: #fff;
+    border: 1px solid #2d9882; }
+  .aboutSubaruId .partTtl {
+    margin-bottom: 25px;
+    color: #2d9882;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center; }
+  .aboutSubaruId p {
+    font-size: 1.4rem;
+    line-height: 2; }
+    .aboutSubaruId p strong {
+      font-weight: bold;
+      font-size: 1.6rem;
+      background: linear-gradient(transparent 90%, #FFADAE 60%); }
+      @media screen and (max-width: 767px) {
+        .aboutSubaruId p strong {
+          font-size: 2.7rem; } }
+    .aboutSubaruId p small {
+      font-size: 1.2rem; }
+  @media screen and (max-width: 767px) {
+    .aboutSubaruId {
+      padding: 5.3333333333vw; }
+      .aboutSubaruId .partTtl {
+        margin-bottom: 3.3333333333vw;
+        font-size: 3.2rem; }
+      .aboutSubaruId p {
+        font-size: 2.8rem; }
+        .aboutSubaruId p small {
+          font-size: 2.4rem; } }
+
+.btn_shareBox {
+  background-color: #e4f2ec;
+  padding: 100px; }
+  @media screen and (max-width: 767px) {
+    .btn_shareBox {
+      padding: 5.3333333333vw 5.3333333333vw 8vw; } }
+
+.snsBox1 {
+  display: flex;
+  justify-content: center; }
+  .snsBox1 a {
+    transition: 0.3s; }
+    .snsBox1 a:hover {
+      opacity: 0.7;
+      text-decoration: none; }
+    .snsBox1 a + a {
+      margin-left: 50px; }
+  @media screen and (max-width: 767px) {
+    .snsBox1 a {
+      width: 9.3333333333vw; }
+      .snsBox1 a + a {
+        margin-left: 8vw; }
+      .snsBox1 a img {
+        width: 100%; } }
+
+/* SNS */
+.snsbox p {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1rem; }
+  @media screen and (max-width: 767px) {
+    .snsbox p {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem; } }
+.snsbox ul {
+  display: flex;
+  justify-content: center; }
+  @media screen and (max-width: 767px) {
+    .snsbox ul {
+      padding-bottom: 5vw; } }
+  @media screen and (max-width: 320px) {
+    .snsbox ul {
+      justify-content: space-between;
+      width: 28.5vw;
+      margin: 0 auto;
+      flex-wrap: wrap; } }
+  .snsbox ul li {
+    transition: 0.3s;
+    text-decoration: none;
+    margin: 0 2rem; }
+    @media screen and (max-width: 767px) {
+      .snsbox ul li {
+        margin: 0; } }
+    .snsbox ul li:hover {
+      opacity: 0.7; }
+    @media screen and (max-width: 767px) {
+      .snsbox ul li {
+        width: 25%; } }
+    @media screen and (max-width: 320px) {
+      .snsbox ul li {
+        width: 39%; } }
+    @media screen and (max-width: 320px) {
+      .snsbox ul li:nth-child(2n+1) {
+        margin-left: 0; } }
+    @media screen and (max-width: 320px) {
+      .snsbox ul li:nth-child(n+3) {
+        margin-top: 2.5vw; } }
+    .snsbox ul li a {
+      color: #333; }
+      .snsbox ul li a img {
+        display: block;
+        margin: 0 auto; }
+      .snsbox ul li a span {
+        position: relative;
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+        text-align: center; }
+        @media screen and (max-width: 767px) {
+          .snsbox ul li a span {
+            font-size: 2rem; } }
+        .snsbox ul li a span:after {
+          content: "";
+          display: inline-block;
+          background-image: url(https://www.subaru.jp/common/img/footer_outlink_icon.png);
+          background-repeat: no-repeat;
+          width: 16px;
+          height: 13px;
+          vertical-align: middle;
+          margin-left: 3px; }
+          @media screen and (max-width: 767px) {
+            .snsbox ul li a span:after {
+              display: block;
+              margin: 0 auto; } }
+  .snsbox ul a + a {
+    margin-left: 50px; }
+    @media screen and (max-width: 767px) {
+      .snsbox ul a + a {
+        margin-left: 4vw; } }
+
+/*--------------------------------------
+ プラグイン
+---------------------------------------*/
+/* Slick */
+.slick-slider {
+  margin-bottom: 0; }
+
+.slick-dots li {
+  background-color: #8c8c8c;
+  width: 15px;
+  height: 15px;
+  margin: 0 7.5px;
+  border-radius: 50%; }
+  .slick-dots li.slick-active {
+    background-color: #4b972b; }
+  @media screen and (max-width: 767px) {
+    .slick-dots li {
+      width: 2.34375vw;
+      height: 2.34375vw;
+      margin: 0 1.171875vw; } }
+
+#term {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 5000;
+  display: none; }
+
+#term .wrap {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  margin: 120px auto 0; }
+  @media screen and (max-width: 767px) {
+    #term .wrap {
+      width: 100%; } }
+
+#term .wrap .close {
+  position: absolute;
+  right: 0;
+  top: -60px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 40px;
+  text-decoration: none; }
+
+#term .wrap .body {
+  background: #f1f5f7;
+  padding: 40px;
+  border: 1px solid #9eaebd;
+  overflow: scroll; }
+
+#term .wrap .body p {
+  font-size: 14px;
+  margin-bottom: 1em;
+  text-align: left; }
+
+/*--------------------------------------
+  トップページ
+---------------------------------------*/
+@media screen and (max-width: 767px) {
+  .pageRegist .ttl3 {
+    font-size: 3.2rem; } }
+
+.IPassBox .q2Box {
+  padding-bottom: 30px;
+  position: relative; }
+  .IPassBox .q2Box table {
+    width: 100%;
+    font-size: 1.4rem; }
+    @media screen and (max-width: 767px) {
+      .IPassBox .q2Box table {
+        font-size: 2.7rem; } }
+    .IPassBox .q2Box table tr td {
+      width: 350px;
+      padding: 12px 0; }
+      @media screen and (max-width: 767px) {
+        .IPassBox .q2Box table tr td {
+          width: auto; } }
+  .IPassBox .q2Box.carOwn:after {
+    display: none; }
+
+.errMsg {
+  display: inline-block;
+  color: #ee3333;
+  margin-left: 15px;
+  margin-top: 10px; }
+
+.errTxt {
+  color: #ee3333; }
+
+.errBox {
+  border: 2px solid #ee3333;
+  padding: 10px;
+  text-align: center;
+  color: #ee3333;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 0 0 30px 0;
+  display: none; }
+  @media screen and (max-width: 767px) {
+    .errBox {
+      font-size: 2.2rem; } }
+
+.step-nav {
+  position: relative;
+  max-width: 830px;
+  margin: 0 auto 70px auto; }
+  @media screen and (max-width: 767px) {
+    .step-nav {
+      margin: 0 auto 30px auto; } }
+  .step-nav:before {
+    content: "";
+    height: 2px;
+    width: 80%;
+    background: #2d9882;
+    position: absolute;
+    left: 10%;
+    top: 31%;
+    z-index: 1; }
+  .step-nav:after {
+    content: "";
+    height: 2px;
+    width: 80%;
+    background: #2d9882;
+    position: absolute;
+    left: 10%;
+    top: 34%;
+    z-index: 1; }
+  .step-nav ul {
+    max-width: 830px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3; }
+    .step-nav ul li {
+      width: 25%;
+      text-align: center; }
+      @media screen and (max-width: 767px) {
+        .step-nav ul li {
+          width: 20%; } }
+      .step-nav ul li em {
+        font-style: normal;
+        font-weight: bold; }
+      .step-nav ul li span {
+        display: block;
+        margin: 0 auto;
+        padding: 15px 0;
+        border: 2px solid #2d9882;
+        border-radius: 10px;
+        background: #FFF;
+        max-width: 80px;
+        color: #2d9882;
+        position: relative;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1; }
+        @media screen and (max-width: 767px) {
+          .step-nav ul li span {
+            padding: 10px 0;
+            font-size: 2rem; } }
+        .step-nav ul li span.current {
+          background: #2d9882;
+          color: #FFF; }
+          .step-nav ul li span.current:after {
+            background: #2d9882; }
+        .step-nav ul li span:after {
+          content: "";
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          border-top: 2px solid #2d9882;
+          border-right: 2px solid #2d9882;
+          transform: rotate(135deg);
+          background: #FFF;
+          position: absolute;
+          bottom: -12px;
+          left: 30px; }
+          @media screen and (max-width: 767px) {
+            .step-nav ul li span:after {
+              left: 50%;
+              margin-left: -5px;
+              width: 10px;
+              bottom: -8px;
+              height: 10px; } }
+        .step-nav ul li span strong {
+          font-size: 3rem;
+          display: block; }
+          @media screen and (max-width: 767px) {
+            .step-nav ul li span strong {
+              font-size: 5rem; } }
+      .step-nav ul li p {
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding-top: 25px; }
+        @media screen and (max-width: 767px) {
+          .step-nav ul li p {
+            font-size: 3rem;
+            padding-top: 20px; } }
+
+.icon-must {
+  color: #ee3333; }
+
+.IPassBox.input-table {
+  margin-bottom: 60px;
+  max-width: 700px; }
+  @media screen and (max-width: 767px) {
+    .IPassBox.input-table {
+      margin-bottom: 40px; } }
+  .IPassBox.input-table > table tr td {
+    width: 450px; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.input-table > table tr td {
+        width: auto; } }
+  .IPassBox.input-table th {
+    position: relative;
+    padding-right: 70px; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.input-table th {
+        padding-right: 0px;
+        display: block; } }
+    .IPassBox.input-table th span {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      margin-right: 20px;
+      color: #999999; }
+      @media screen and (max-width: 767px) {
+        .IPassBox.input-table th span {
+          position: relative;
+          margin: 0 0 0 5px; } }
+      .IPassBox.input-table th span.icon-must {
+        color: #ee3333; }
+  @media screen and (max-width: 767px) {
+    .IPassBox.input-table td {
+      display: block;
+      width: 100%; } }
+  .IPassBox.input-table td p {
+    padding-left: 15px; }
+  .IPassBox.input-table .col2 {
+    width: 100%;
+    justify-content: space-between; }
+    .IPassBox.input-table .col2 li {
+      width: 45%; }
+  .IPassBox.input-table label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative; }
+  .IPassBox.input-table input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    opacity: 0; }
+  .IPassBox.input-table input[type="radio"]:checked + label.radio-label:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #2d9882;
+    border-radius: 50px;
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-top: -1px;
+    position: absolute;
+    left: -15px;
+    top: 5px; }
+  .IPassBox.input-table .radio-label {
+    cursor: pointer;
+    padding-left: 5px; }
+    .IPassBox.input-table .radio-label:before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #2d9882;
+      border-radius: 50px;
+      margin-right: 5px;
+      vertical-align: middle;
+      margin-top: -1px;
+      position: absolute;
+      left: -20px;
+      top: 0px; }
+  .IPassBox.input-table .select-box {
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    position: relative;
+    line-height: 1;
+    margin-top: 5px;
+    border-radius: 10px; }
+    .IPassBox.input-table .select-box:after {
+      content: '';
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      width: 0;
+      height: 0;
+      border-right: 5px solid transparent;
+      border-top: 8px solid #2d9882;
+      border-left: 5px solid transparent; }
+      @media screen and (max-width: 767px) {
+        .IPassBox.input-table .select-box:after {
+          top: 12px; } }
+    .IPassBox.input-table .select-box.no-icon2:after {
+      right: 38%; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.input-table .select-box.no-icon2 {
+        border-radius: 0px; } }
+    .IPassBox.input-table .select-box.no-icon:after {
+      display: none; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.input-table .select-box.no-icon {
+        border-radius: 0px; } }
+    .IPassBox.input-table .select-box select, .IPassBox.input-table .select-box input {
+      border: none;
+      border: 1px solid #2d9882;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #fafcfc;
+      padding: 2px 10px 2px 15px;
+      line-height: 1.6;
+      box-sizing: border-box;
+      border-radius: 50px;
+      width: 100%;
+      margin-bottom: 5px; }
+      .IPassBox.input-table .select-box select.on, .IPassBox.input-table .select-box input.on {
+        color: #333; }
+  .IPassBox.input-table .btn.btn-post {
+    font-weight: normal;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    text-decoration: none; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.input-table .btn.btn-post {
+        padding: 1.4em 1.1em;
+        font-size: 1.8rem; } }
+
+.anc-title {
+  padding: 40px 0 30px;
+  font-weight: bold;
+  font-size: 1.5rem; }
+  .anc-title.ttls {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #333; }
+    @media screen and (max-width: 767px) {
+      .anc-title.ttls {
+        font-size: 2.7rem; } }
+  @media screen and (max-width: 767px) {
+    .anc-title {
+      font-size: 2.7rem; } }
+
+.IPassBox.input-table.anc-table {
+  max-width: 700px; }
+  .IPassBox.input-table.anc-table > table tr td {
+    width: 350px; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.input-table.anc-table > table tr td {
+        width: auto; } }
+  .IPassBox.input-table.anc-table optgroup {
+    display: none; }
+  .IPassBox.input-table.anc-table .carname-input {
+    display: none; }
+  .IPassBox.input-table.anc-table th p {
+    text-indent: -20px;
+    margin-left: 20px;
+    vertical-align: top;
+    position: relative; }
+    .IPassBox.input-table.anc-table th p span {
+      top: 0px;
+      right: -70px; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.input-table.anc-table th p {
+        margin-right: 0px; }
+        .IPassBox.input-table.anc-table th p span {
+          text-indent: 0px;
+          top: 0px;
+          right: 0px;
+          vertical-align: top; } }
+
+.IPassBox.pass-table {
+  max-width: 560px; }
+  .IPassBox.pass-table > table tr td {
+    width: 330px; }
+    @media screen and (max-width: 767px) {
+      .IPassBox.pass-table > table tr td {
+        width: auto; } }
+
+.doui-text {
+  padding: 0 0 60px 0;
+  position: relative;
+  font-size: 1.6rem; }
+  .doui-text input {
+    position: absolute;
+    left: 0px;
+    top: 0px; }
+  @media screen and (max-width: 767px) {
+    .doui-text {
+      padding: 0 0 30px 0;
+      font-size: 2.5rem; } }
+
+input[type="checkbox"] {
+  opacity: 0; }
+
+label.checkbox {
+  position: relative;
+  padding-left: 25px; }
+  label.checkbox:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    border: 1px solid #2d9882;
+    border-radius: 3px; }
+
+input[type="checkbox"]:checked + label.checkbox:after {
+  content: "";
+  width: 10px;
+  position: absolute;
+  display: inline-block;
+  left: 3px;
+  top: 5px;
+  height: 5px;
+  border-top: 1px solid #2d9882;
+  border-right: 1px solid #2d9882;
+  transform: rotate(130deg); }
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  width: 90%;
+  margin: 60px auto 0 auto; }
+  @media screen and (max-width: 767px) {
+    .form-btn {
+      width: 100%;
+      margin-top: 0px;
+      flex-direction: column-reverse; } }
+  .form-btn li {
+    width: 48%; }
+    @media screen and (max-width: 767px) {
+      .form-btn li {
+        width: 100%;
+        margin-top: 20px; } }
+    .form-btn li a, .form-btn li input {
+      display: block;
+      text-align: center;
+      padding: 25px;
+      font-size: 1.8rem;
+      font-weight: bold; }
+      @media screen and (max-width: 767px) {
+        .form-btn li a, .form-btn li input {
+          font-size: 3rem;
+          padding: 20px 0; } }
+    .form-btn li .btn-next {
+      background: #2d9882;
+      position: relative; }
+      .form-btn li .btn-next:after {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-top: 3px solid #FFF;
+        border-right: 3px solid #FFF;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 20%;
+        top: 43%; }
+      .form-btn li .btn-next.dis {
+        background-color: #000;
+        opacity: 0.3; }
+        .form-btn li .btn-next.dis:before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1; }
+        .form-btn li .btn-next.dis input {
+          opacity: 0.5; }
+        .form-btn li .btn-next.dis:after {
+          opacity: 0.5; }
+      .form-btn li .btn-next input {
+        cursor: pointer; }
+    .form-btn li input {
+      -webkit-appearance: none;
+      appearance: none;
+      border: none;
+      display: block;
+      background: rgba(0, 0, 0, 0);
+      height: 100%;
+      color: #FFF;
+      width: 100%; }
+    .form-btn li .btn-back {
+      background: #CCC;
+      text-decoration: none;
+      color: #FFF;
+      position: relative; }
+      .form-btn li .btn-back:before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        border-top: 3px solid #FFF;
+        border-left: 3px solid #FFF;
+        transform: rotate(-45deg); }
+
+.pageConfirm .ttl3 {
+  margin-bottom: 30px; }
+  @media screen and (max-width: 767px) {
+    .pageConfirm .ttl3 {
+      margin-bottom: 15px; } }
+
+.confirm-table {
+  max-width: 800px; }
+  .confirm-table table {
+    width: 100%;
+    margin-bottom: 80px; }
+    .confirm-table table.shijo-table th {
+      width: 20%; }
+      @media screen and (max-width: 767px) {
+        .confirm-table table.shijo-table th {
+          width: auto; } }
+    .confirm-table table.shijo-table td {
+      widows: 80%; }
+      @media screen and (max-width: 767px) {
+        .confirm-table table.shijo-table td {
+          width: auto; } }
+    @media screen and (max-width: 767px) {
+      .confirm-table table.anc-table td {
+        padding-left: 25px; } }
+    .confirm-table table th, .confirm-table table td {
+      padding: 15px 0;
+      width: 50%;
+      text-align: left;
+      box-sizing: border-box;
+      font-size: 1.4rem;
+      border-bottom: 1px dotted #c4dada; }
+      @media screen and (max-width: 767px) {
+        .confirm-table table th, .confirm-table table td {
+          display: block;
+          width: auto;
+          font-size: 2.8rem; } }
+    @media screen and (max-width: 767px) {
+      .confirm-table table td {
+        padding: 0 0 10px 0; } }
+    .confirm-table table th {
+      color: #999999;
+      text-indent: -20px;
+      padding-left: 20px;
+      padding-right: 100px;
+      box-sizing: border-box; }
+      @media screen and (max-width: 767px) {
+        .confirm-table table th {
+          padding: 10px 0px 5px 20px;
+          border: none; } }
+  .confirm-table dl {
+    border-bottom: 1px dotted #c4dada;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px; }
+    .confirm-table dl dt {
+      width: 30%;
+      padding-top: 15px;
+      color: #999999; }
+      @media screen and (max-width: 767px) {
+        .confirm-table dl dt {
+          width: 40%; } }
+    .confirm-table dl dd {
+      width: 70%;
+      padding-top: 15px; }
+      @media screen and (max-width: 767px) {
+        .confirm-table dl dd {
+          width: 60%; } }
+    .confirm-table dl:last-child {
+      border: none; }
+
+.wrapper {
+  width: 90%; }
+
+.IPassBox.input-table th {
+  padding-right: 0px; }
+
+.doui-text {
+  padding-bottom: 20px; }
+
+@media screen and (max-width: 1024px) {
+  .box1 {
+    padding: 5%; } }
+
+.IPassBox.input-table.anc-table th {
+  padding-right: 80px; }
+  @media screen and (max-width: 767px) {
+    .IPassBox.input-table.anc-table th {
+      padding-top: 15px;
+      padding-right: 0px; }
+      .IPassBox.input-table.anc-table th.W25P {
+        width: auto !important; }
+      .IPassBox.input-table.anc-table th.W65P {
+        width: auto !important; } }
+  .IPassBox.input-table.anc-table th.fwB {
+    color: #2d9882; }
+
+.anc-title {
+  font-size: 1.6rem;
+  color: #2d9882; }
+  @media screen and (max-width: 767px) {
+    .anc-title {
+      font-size: 2.7rem;
+      padding: 0 0 5vw 0; } }
+
+.seiyaku-list {
+  text-align: left;
+  font-size: 1.6rem; }
+  .seiyaku-list li {
+    margin: 20px 0 0 20px;
+    list-style: disc; }
+  @media screen and (max-width: 767px) {
+    .seiyaku-list {
+      font-size: 2.7rem; } }
+
+.gaitouBox {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 30px;
+  background: #EEE;
+  margin-bottom: 30px; }
+  .gaitouBox li {
+    background: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: #D93335;
+    font-weight: bold; }
+  @media screen and (max-width: 767px) {
+    .gaitouBox {
+      padding: 5%;
+      font-size: 2.5rem; } }
+
+.IPassBox .qBox {
+  padding-bottom: 20px;
+  position: relative; }
+  .IPassBox .qBox table {
+    width: 100%;
+    font-size: 1.4rem; }
+    @media screen and (max-width: 767px) {
+      .IPassBox .qBox table {
+        font-size: 2.7rem; } }
+    .IPassBox .qBox table tr td {
+      width: 350px;
+      padding: 12px 0; }
+      @media screen and (max-width: 767px) {
+        .IPassBox .qBox table tr td {
+          width: auto; }
+          .IPassBox .qBox table tr td.W65P {
+            width: auto !important; } }
+      @media screen and (max-width: 767px) {
+        .IPassBox .qBox table tr td input.W80P {
+          width: 100% !important; } }
+
+.IPassBox.input-table.anc-table {
+  max-width: 750px; }
+  .IPassBox.input-table.anc-table table {
+    margin-bottom: 40px;
+    position: relative; }
+    .IPassBox.input-table.anc-table table:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: -30px;
+      left: 0px;
+      background: #EEE; }
+
+.IPassBox.input-table.anc-table .anc-title {
+  padding: 20px 0 15px 0; }
+  @media screen and (max-width: 767px) {
+    .IPassBox.input-table.anc-table .anc-title {
+      padding: 0 0 3vw 0; } }

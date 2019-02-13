@@ -1,0 +1,125 @@
+.wrapper {
+	width: 90%;
+	
+}
+.IPassBox.input-table th{
+	padding-right: 0px;
+}
+.doui-text{
+	padding-bottom: 20px;
+}
+.box1{
+	@include mq(l){
+		padding: 5%;
+	}
+}
+
+.IPassBox.input-table.anc-table{
+	th{
+		padding-right: 80px;
+    @include mq{
+      padding-top: 15px;
+      padding-right: 0px;
+      &.W25P{
+        width: auto !important;
+      }
+      &.W65P{
+        width: auto !important;
+      }
+    }
+		&.fwB{
+			color: $mainColor;
+		}
+	}
+}
+.anc-title{
+	font-size: 1.6rem;
+	color: $mainColor;
+  @include mq{
+    font-size: 2.7rem;
+    padding:0 0 5vw 0;
+  }
+}
+.seiyaku-list{
+	text-align: left;
+	font-size: 1.6rem;
+	li{
+		margin: 20px 0 0 20px;
+		list-style: disc;
+	}
+	@include mq{
+		font-size: 2.7rem;
+	}
+}
+.gaitouBox{
+	font-size: 1.6rem;
+	text-align: center;
+	padding: 30px;
+	background: #EEE;
+	margin-bottom: 30px;
+	li{
+		background: #FFF;
+		padding: 10px;
+		border-radius: 5px;
+		margin-top: 15px;
+		color: #D93335;
+		font-weight: bold;
+	}
+	
+	@include mq{
+		padding: 5%;
+		font-size: 2.5rem;
+	}
+}
+
+.IPassBox .qBox{
+	padding-bottom: 20px;
+	position: relative;
+	table{
+		width: 100%;
+		font-size: 1.4rem;
+		@include mq{
+			font-size: 2.7rem;
+		}
+		tr{
+			td{
+				width:350px;
+				padding: 12px 0;
+				@include mq{
+					width: auto;
+          &.W65P{
+            width: auto !important;
+          }
+				}
+        @include mq{
+          input.W80P{
+            width: 100% !important;
+          }
+        }
+			}
+		}
+	}
+}
+.IPassBox.input-table.anc-table{
+	max-width: 750px;
+	table{
+		margin-bottom: 40px;
+		position: relative;
+		&:after{
+			content: "";
+			display:block;
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			bottom: -30px;
+			left: 0px;
+			background: #EEE;
+		}
+	}
+}
+.IPassBox.input-table.anc-table .anc-title{
+	padding:20px 0 15px 0;
+  @include mq{
+    padding: 0 0 3vw 0; 
+  }
+}

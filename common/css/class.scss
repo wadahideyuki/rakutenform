@@ -1,0 +1,257 @@
+@charset "UTF-8";
+//クラス用scss
+@import "mq";
+@import "var";
+
+
+.pc{}
+.sp{display: none !important;}
+
+/*-- Width --*/
+.WAuto{width:auto !important;}
+$iW : 0;
+@while $iW <= 500{
+	.W#{$iW}{width: $iW * 1px !important;}
+	$iW: $iW+5;
+}
+$iWP : 1;
+@while $iWP <= 100{
+	.W#{$iWP}P{width: $iWP * 1% !important;}
+	$iWP: $iWP+1;
+}
+
+/*-- Margin --*/
+@for $iMT from 0 through 100{
+	.MT#{$iMT}{margin-top: $iMT * 1px !important;}
+	$iMT: $iMT+5;
+}
+@for $iMR from 0 through 100{
+	.MR#{$iMR}{margin-right: $iMR * 1px !important;}
+	$iMR: $iMR+5;
+}
+@for $iMB from 0 through 100{
+	.MB#{$iMB}{margin-bottom: $iMB * 1px !important;}
+	$iMB: $iMB+5;
+}
+@for $iML from 0 through 100{
+	.ML#{$iML}{margin-left: $iML * 1px !important;}
+	$iML: $iML+5;
+}
+
+/*-- Padding --*/
+@for $iPT from 0 through 100{
+	.PT#{$iPT}{padding-top: $iPT * 1px !important;}
+	$iPT: $iPT+5;
+}
+@for $iPR from 0 through 100{
+	.PR#{$iPR}{padding-right: $iPR * 1px !important;}
+	$iPR: $iPR+5;
+}
+@for $iPB from 0 through 100{
+	.PB#{$iPB}{padding-bottom: $iPB * 1px !important;}
+	$iPB: $iPB+5;
+}
+@for $iPL from 0 through 100{
+	.PL#{$iPL}{padding-left: $iPL * 1px !important;}
+	$iPL: $iPL+5;
+}
+
+/*-- font-size --*/
+@for $iFz from 6 through 40{
+	.fz#{$iFz}{font-size: $iFz * 0.1rem;}
+}
+
+.fw{
+	&B{font-weight: bold !important;}
+	&N{font-weight: normal !important;}
+}
+
+@for $iLh from 8 through 24{
+	.lh#{$iLh}{line-height: $iLh * 0.1 !important;}
+}
+
+/*-- Etc --*/
+.dis{
+	&I{display:inline !important;}
+	&B{display:block !important;}
+	&IB{display:inline-block !important;}
+	&T{display:table !important;}
+	&TC{display:table-cell !important;}
+	&N{display:none !important;}
+	&F{display: flex !important;}
+}
+
+.ta {
+	&L{text-align: left !important;}
+	&R{text-align: right !important;}
+	&C{text-align: center !important;}
+}
+.va {
+	&T{vertical-align: top !important;}
+	&M{vertical-align: middle !important;}
+	&B{vertical-align: bottom !important;}
+	&TB{vertical-align: text-bottom !important;}
+}
+
+.flt{
+	&L{float: left !important;}
+	&R{float: right!important;}
+	&N{float: none!important;}
+}
+
+.pos{
+	&S{position:static !important;}
+	&R{position:relative !important;}
+	&A{position:absolute !important;}
+	&F{position:fixed !important;}
+}
+
+.brWord{word-wrap:break-word;}
+.waNw{white-space: nowrap;}
+
+.printDown{display:none;}
+.printBreak{display:none;}
+
+
+
+
+@include mq{
+.pc{display: none !important;}
+
+/*-- Width --*/
+.spWAuto{width:auto !important;}
+$spiW : 0;
+@while $spiW <= 500{
+	.spW#{$spiW}{width: $spiW * 1px !important;}
+	$spiW: $spiW+5;
+}
+$spiWP : 1;
+@while $spiWP <= 100{
+	.spW#{$spiWP}P{width: $spiWP * 1% !important;}
+	$spiWP: $spiWP+1;
+}
+
+/*-- Margin --*/
+@for $iMT from 0 through 100{
+	.spMT#{$iMT}{margin-top: $iMT * 1px !important;}
+	$iMT: $iMT+1;
+}
+@for $iMR from 0 through 100{
+	.spMR#{$iMR}{margin-right: $iMR * 1px !important;}
+	$iMR: $iMR+1;
+}
+@for $iMB from 0 through 100{
+	.spMB#{$iMB}{margin-bottom: $iMB * 1px !important;}
+	$iMB: $iMB+1;
+}
+@for $iML from 0 through 100{
+	.spML#{$iML}{margin-left: $iML * 1px !important;}
+	$iML: $iML+1;
+}
+
+@for $iMTP from 0 through 100{
+	.spMT#{$iMTP}P{margin-top: $iMTP * 1% !important;}
+	$iMTP: $iMTP+1;
+}
+@for $iMRP from 0 through 100{
+	.spMR#{$iMRP}P{margin-right: $iMRP * 1% !important;}
+	$iMRP: $iMRP+1;
+}
+@for $iMBP from 0 through 100{
+	.spMB#{$iMBP}P{margin-bottom: $iMBP * 1% !important;}
+	$iMBP: $iMBP+1;
+}
+@for $iMLP from 0 through 100{
+	.spML#{$iMLP}P{margin-left: $iMLP * 1% !important;}
+	$iMLP: $iMLP+1;
+}
+
+/*-- Padding --*/
+@for $iPT from 0 through 100{
+	.spPT#{$iPT}{padding-top: $iPT * 1px !important;}
+	$iPT: $iPT+1;
+}
+@for $iPR from 0 through 100{
+	.spPR#{$iPR}{padding-right: $iPR * 1px !important;}
+	$iPR: $iPR+1;
+}
+@for $iPB from 0 through 100{
+	.spPB#{$iPB}{padding-bottom: $iPB * 1px !important;}
+	$iPB: $iPB+1;
+}
+@for $iPL from 0 through 100{
+	.spPL#{$iPL}{padding-left: $iPL * 1px !important;}
+	$iPL: $iPL+1;
+}
+
+@for $iPTP from 0 through 100{
+	.spPT#{$iPTP}P{padding-top: $iPTP * 1% !important;}
+	$iPTP: $iPTP+1;
+}
+@for $iPRP from 0 through 100{
+	.spPR#{$iPRP}P{padding-right: $iPRP * 1% !important;}
+	$iPRP: $iPRP+1;
+}
+@for $iPBP from 0 through 100{
+	.spPB#{$iPBP}P{padding-bottom: $iPBP * 1% !important;}
+	$iPBP: $iPBP+1;
+}
+@for $iPLP from 0 through 100{
+	.spPL#{$iPLP}P{padding-left: $iPLP * 1% !important;}
+	$iPLP: $iPLP+1;
+}
+
+/*-- font-size --*/
+@for $iFz from 6 through 40{
+	.spFz#{$iFz}{font-size: $iFz * 0.1rem;}
+}
+
+.spFw{
+	&B{font-weight: bold !important;}
+	&N{font-weight: normal !important;}
+}
+
+@for $iLh from 8 through 24{
+	.spLh#{$iLh}{line-height: $iLh * 0.1 !important;}
+}
+
+/*-- Etc --*/
+.spDis{
+	&I{display:inline !important;}
+	&B{display:block !important;}
+	&IB{display:inline-block !important;}
+	&T{display:table !important;}
+	&TC{display:table-cell !important;}
+	&N{display:none !important;}
+	&F{display: flex !important;}
+}
+
+.spTa {
+	&L{text-align: left !important;}
+	&R{text-align: right !important;}
+	&C{text-align: center !important;}
+}
+.spVa {
+	&T{vertical-align: top !important;}
+	&M{vertical-align: middle !important;}
+	&B{vertical-align: bottom !important;}
+	&TB{vertical-align: text-bottom !important;}
+}
+
+.spFlt{
+	&L{float: left !important;}
+	&R{float: right!important;}
+	&N{float: none!important;}
+}
+
+.spPos{
+	&S{position:static !important;}
+	&R{position:relative !important;}
+	&A{position:absolute !important;}
+	&F{position:fixed !important;}
+}
+
+.ffNS{font-family: "Noto Sans Japanese";}
+
+
+}

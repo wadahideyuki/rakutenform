@@ -1,0 +1,986 @@
+@charset "UTF-8";
+
+@import "mq";
+@import "var";
+
+/*--------------------------------------
+ 要素
+---------------------------------------*/
+.nokori-item{
+  background-color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid $mainColor;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  em{
+    strong{
+      color: $mainColor;
+      font-size: 1.5em;
+    }
+  }
+}
+.error-text{
+  background: #FF0004;
+  padding: 0.3em 0.5em !important;
+  border-radius: 5px;
+  display: inline-block;
+  color: #FFF;
+  margin-top: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  &.err2{
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 2rem;
+    @include mq{
+      font-size: 2.4rem;
+    }
+  }
+}
+.lh20{
+  .error-text{
+     &.err2{
+       background-color: #fff;
+       color: #FF0004;
+    }
+  }
+}
+a{
+	color: $mainColor;
+	text-decoration: underline;
+	&:hover{
+		text-decoration: none;
+	}
+  &.arrow{
+    display: inline-block;
+    position: relative;
+    &:before{
+      content: "";
+      width: 0.4em;
+      height: 0.4em;
+      display: inline-block;
+      border-top: 2px solid #2d9882;
+      border-right: 2px solid #2d9882;
+      transform: rotate(45deg);
+      margin-right: 0.5em;
+    }
+  }
+}
+.icon-must{
+  font-weight: normal !important;
+  &.nini{
+    color: #333 !important;
+  }
+}
+img{max-width: 100%;}
+section{
+	& + section{
+		margin-top: 80px;
+	}
+	@include mq{
+		& + section{
+			margin-top: (100/750) * 100vw;
+		}
+	}
+}
+.dekiur{
+  width: 90%;
+  padding: 20px 0 0 0;
+  margin: 0 auto;
+  @include mq{
+    width: 100%;
+  }
+}
+
+/* フォーム */
+button{
+	width: 100%;
+	border: none;
+}
+
+.input1{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	background-color: #fafcfc;
+	height: 40px;
+	padding: 5px 7px 2px;
+	border: 1px solid $mainColor;
+	border-radius: 0;
+	box-sizing: border-box;
+	@include mq{
+		height: auto;
+		padding: (20/750) * 100vw;
+	}
+}
+.txArea1{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	width: 100%;
+	height: (150/12) * 1em;
+	padding: 15px 20px;
+	border: 1px solid $mainColor;
+	border-radius: 0;
+	box-sizing: border-box;
+	resize: none;
+	@include mq{
+		height: (360/24) * 1em;
+		padding: (35/750) * 100vw (40/750) * 100vw;
+	}
+}
+
+.rdo1{
+	input[type="radio"]{
+		display: none;
+	}
+	label{
+		display: inline-block;
+		font-size: 0;
+		vertical-align: middle;
+		@include hvr;
+		span{
+			display: inline-block;
+			background-color: #fff;
+			padding: 4px;
+			border: 1px solid $mainColor;
+			border-radius: 50px;
+			vertical-align: top;
+			&:before{
+				content: "";
+				display: inline-block;
+				background-color: #fff;
+				width: 10px;
+				height: 10px;
+				border-radius: 50px;
+				vertical-align: top;
+			}
+		}
+	}
+	input[type="radio"]:checked + label span:before{
+		background-color: $mainColor;
+	}
+	@include mq{
+		label{
+			span{
+				padding: (6/750) * 100vw;
+				border-width: (2/750) * 100vw;
+				&:before{
+					width: (12/750) * 100vw;
+					height: (12/750) * 100vw;
+				}
+			}
+		}
+	}
+}
+
+.IPassBox{
+	max-width: 680px;
+	margin-left: auto;
+	margin-right: auto;
+	>table{
+		width: 100%;
+		font-size: 1.4rem;
+		tr{
+			th{
+				padding-top: 12px;
+				vertical-align: top;
+			}
+			td{
+				width: 480px;
+				p{
+					margin-top: 10px;
+				}
+			}
+			& + tr{
+				th{
+					padding-top: (12+35) * 1px;
+				}
+				td{
+					padding-top: 35px;
+				}
+			}
+		}
+	}
+	@include mq{
+		>table{
+			display: block;
+			font-size: 2.8rem;
+			tbody{display: block;}
+			tr{
+				display: block;
+				th{
+					display: block;
+					padding-top: 0;
+				}
+				td{
+					display: block;
+					width: auto;
+					margin-top: (5/750) * 100vw;
+					p{
+						margin-top: (10/750) * 100vw;
+						font-size: 2.4rem;
+					}
+				}
+				& + tr{
+					th{
+						padding-top: (50/750) * 100vw;
+					}
+					td{
+						padding-top: 0;
+					}
+				}
+			}
+		}
+	}
+}
+.sijoCarBox{
+	max-width: none;
+	ul{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -4px;
+		> li{
+			width: 25%;
+			margin-bottom: 8px;
+			padding: 0 4px;
+			box-sizing: border-box;
+			input[type="radio"]{
+				display: none;
+			}
+			label{
+				display: block;
+				border: 1px solid #dedede;
+				@include hvr;
+				p{
+					background-color: #dedede;
+					padding: 5px;
+				}
+			}
+		}
+	}
+	@include mq{
+		ul{
+			margin: 0 -(15/750) * 100vw;
+			> li{
+				width: 50%;
+				margin-bottom: (30/750) * 100vw;
+				padding: 0 (15/750) * 100vw;
+				input[type="radio"]{
+				}
+				label{
+					p{
+						padding: (6/750) * 100vw;
+					}
+				}
+			}
+		}
+	}
+}
+.sijoHyokaBox{
+	max-width: 680px;
+	margin: auto;
+	table{
+		border-collapse: separate;
+		border-spacing: 2px 12px;
+		table-layout: fixed;
+		width: 100%;
+		font-size: 1.4rem;
+		th{
+			width: 160px;
+			text-align: center;
+		}
+		td{
+			vertical-align: middle;
+		}
+		thead{
+			background-color: #c2c2c2;
+			color: #fff;
+			font-size: 1.8rem;
+			font-weight: bold;
+			td{
+				padding: 2px;
+			}
+		}
+		tbody{
+			tr:nth-child(odd){
+				background-color: #dedede;
+			}
+			th{
+				&[colspan="6"]{
+					width: auto;
+				}
+			}
+			td{
+				padding: 12px;
+			}
+			dl{
+				display: flex;
+				align-items: center;
+				padding-bottom: 10px;
+				dt{
+					flex-shrink: 0;
+					width: 160px;
+					span{
+						display: inline-block;
+						margin-right: 1em;
+						vertical-align: middle;
+					}
+					small{
+						display: inline-block;
+						color: #999;
+						font-size: (12/14) * 1em;
+						vertical-align: middle;
+					}
+				}
+				dd{
+					width: 100%;
+					padding: 0 10px;
+				}
+			}
+		}
+	}
+	@include mq{
+		max-width: none;
+		table{
+			border-spacing: 1px 5px;
+			font-size: 2.6rem;
+			th{
+				width: (210/750) * 100vw;
+			}
+			td{
+			}
+			thead{
+				font-size: 3.0rem;
+				td{
+					padding: 0.6%;
+				}
+			}
+			tbody{
+				tr:nth-child(odd){
+				}
+				th{
+				}
+				td{
+					padding: (6/750) * 100vw;
+				}
+				dl{
+					display: block;
+					padding:0 (20/750) * 100vw (40/750) * 100vw;
+					text-align: left;
+					dt{
+						flex-shrink: 0;
+						width: auto;
+						span{
+						}
+						small{
+							font-size: (24/26) * 1em;
+						}
+					}
+					dd{
+						width: auto;
+						padding: 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*--------------------------------------
+ パーツ
+---------------------------------------*/
+/* インナー */
+.inner{
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	@include mq{
+		padding-left: (15/320) * $per;
+		padding-right: (15/320) * $per;
+	}
+}
+
+
+/* テキストカラー */
+.txClrMain{color: $mainColor;}
+.txClrRed{color: #ee3333;}
+
+
+/* タイトル */
+.ttl1{
+	margin-bottom: (50/35) * 1em;
+	color: $mainColor;
+	font-size: 3.5rem;
+	font-weight: bold;
+	line-height: (62/35);
+	@include mq{
+		margin-bottom: (70/48) * 1em;
+		font-size: 4.8rem;
+		line-height: (76/48);
+		span{
+			font-size: 3.6rem;
+		}
+	}
+	&.type2{
+		margin-bottom: (40/30) * 1em;
+		font-size: 3.0rem;
+		@include mq{
+			font-size: 3.6rem;
+			line-height: (60/36);
+		}
+	}
+}
+.ttl2{
+	display: flex;
+	align-items: center;
+	margin-bottom: (20/16) * 1em;
+	font-size: 1.6rem;
+	font-weight: bold;
+	&:before{
+		content: "";
+		display: inline-block;
+		width: 0;
+		height: 0;
+		margin-right: 10px;
+		border-style: solid;
+		border-width: (5/16)*1em 0px (5/16)*1em (6/16)*1em;
+		border-color: transparent transparent transparent #333;
+		@media all and (-ms-high-contrast:none){
+			margin-top: -(7/16) * 1em;
+		}
+	}
+	@include mq{
+		margin-bottom: (32/32) * 1em;
+		font-size: 2.8rem;
+		&:before{
+			margin-right: (10/750) * 100vw;
+		}
+	}
+}
+.ttl3{
+	margin-bottom: 40px;
+	padding-bottom: 20px;
+	color: $mainColor;
+	font-size: 2.2rem;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 2px solid $mainColor;
+	span{
+		display: inline-block;
+		margin-right: 1em;
+		vertical-align: middle;
+	}
+	small{
+		display: inline-block;
+		font-size: (12/22) * 1em;
+		vertical-align: middle;
+	}
+	&.type2{
+		margin-bottom: 60px;
+		padding-bottom: 10px;
+	}
+	@include mq{
+		margin-bottom: (60/36) * 1em;
+		font-size: 3.2rem;
+		padding-bottom: (30/36) * 1em;
+		border-bottom-width: (4/750) * 100vw;
+		small{
+			font-size: (24/32) * 1em;
+		}
+		&.type2{
+			font-size: 3.6rem;
+		}
+	}
+}
+
+.fontS2{
+  font-size: 1.3rem;
+  color: #333 !important;
+}
+
+/* ボタン */
+.btn{
+	display: inline-block;
+	background-color: $mainColor;
+	padding: 30px 15px;
+	color: #fff;
+	font-size: 1.6rem;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	@include hvr;
+	.btnWrap > &{display: block;}
+	span{
+		display: inline-block;
+		&:after{
+			content: "";
+			display: inline-block;
+			width: 0.7em;
+			height: 0.7em;
+			margin-top: -0.2em;
+			margin-left: 10px;
+			vertical-align: middle;
+			border-style: solid;
+			border-width: (3/16) * 1em (3/16) * 1em 0 0;
+			border-color: #fff #fff transparent transparent;
+			box-sizing: border-box;
+			transform: rotate(45deg);
+		}
+		&.arwL{
+			&:before{
+				content: "";
+				display: inline-block;
+				width: 0.7em;
+				height: 0.7em;
+				margin-top: -0.2em;
+				margin-right: 10px;
+				vertical-align: middle;
+				border-style: solid;
+				border-width: (3/16) * 1em (3/16) * 1em 0 0;
+				border-color: #fff #fff transparent transparent;
+				box-sizing: border-box;
+				transform: rotate(-135deg);
+			}
+			&:after{
+				content: normal;
+			}
+		}
+	}
+	&.sz2{
+		padding: 22px 15px 18px;
+		font-size: 1.8rem;
+	}
+	&.clr2{//グレー
+		background-color: #a5aaaa;
+	}
+	@include mq{
+		padding: (25/750) * 100vw (25/750) * 100vw;
+		font-size: 2.4rem;
+		line-height: (40/24);
+		&.spType2{
+			position: relative;
+			span{
+				&:after{
+					margin: auto;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: (23/750) * 100vw;
+				}
+			}
+		}
+		&.sz2{
+			padding: (32/750) * 100vw (25/750) * 100vw;
+			font-size: 2.8rem;
+		}
+	}
+}
+/* ボタンの並び */
+.btns1{
+	display: flex;
+	justify-content: center;
+	.btn{
+		width: 300px;
+		box-sizing: border-box;
+		& + .btn{
+			margin-left: 30px;
+		}
+	}
+	@include mq{
+		display: block;
+		.btn{
+			width: 90%;
+			& + .btn{
+				margin:7% 0 0;
+			}
+		}
+		&.spDisF{
+			flex-direction: column-reverse;
+			align-items: center;
+			.btn{
+				& + .btn{
+					margin: 0 0 (40/750) * 100vw;
+				}
+			}
+		}
+	}
+}
+
+
+/* アイコン */
+.icnMail{@include icn("\f0e0");}
+
+
+/* リスト */
+.notes1{//※
+	> li{
+		padding-left: 1.6em;
+		position: relative;
+		&:before{
+			content: "※";
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+
+/* 状態 */
+.dis_flex_block{//pcではflex、spではblock
+	display: flex;
+	@include mq{
+		display: block;
+	}
+}
+.formB{
+  padding-top: 30px;
+  .qBox{
+    padding: 30px 0;
+    border-top: 1px solid #EEE;
+  }
+}
+
+/* 箱 */
+.box1{
+	padding: 10%;
+	border: 1px solid $mainColor;
+	&.size2{
+		padding-left: (160/1000) * $per;
+		padding-right: (160/1000) * $per;
+	}
+	@include mq{
+		padding:5% !important;
+	}
+  .btG {
+    border-top: 1px solid #2d9882;
+    padding: 5rem 0 0;
+    @include mq {
+      padding: 12% 0 0;
+    }
+    .type3 {
+      font-size: 2.3rem;
+      line-height: 1;
+      margin-bottom: 0;
+      @include mq {
+        font-size: 3.6rem;
+        margin-top: 4vw;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5rem;
+      @include mq {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-top: 7.5vw;
+      }
+      li {
+        width: 31.34%;
+        text-align: left;
+        @include mq {
+          width: 100%;        
+        }
+        img {
+          width: 100%;
+        }
+        span {
+          display: block; 
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin: 2rem 0 1.4rem;
+          line-height: 1;
+          @include mq {
+            font-size: 3.2rem;
+            line-height: 1.4;
+            margin: 3rem 0 1.5rem;
+            text-align: center;
+          }
+        }
+        p {
+          font-size: 1.4rem;
+          line-height: 1.4;
+          @include mq {
+            font-size: 3.2rem;
+            line-height: 1.6;
+          }
+        }
+      }
+      li + li {
+        position: relative;
+        @include mq {
+          margin-top: 8rem;
+          &:before {
+            position: absolute;
+            content: "";
+            top: -6vw;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #6c6c6c;            
+          }
+        }
+      }
+    }
+    address {
+      font-size: 1.6rem;
+      font-weight: bold;
+      line-height: 1.75;
+      margin: 3rem 0;
+      @include mq {
+        font-size: 3.2rem;
+        margin: 7vw 0 10vw;
+        line-height: 1.6;
+      }
+    }
+    .spS {
+      display: none;
+      @include mq {
+        display: block;
+      }
+    }
+    iframe {
+      margin-bottom: 3%;
+      @include mq {
+        margin-bottom: 8vw;
+      }
+    }
+  }
+}
+
+.aboutSubaruId{
+  border: 1px solid #2d9882;
+	padding: 60px;
+	&.type2{
+		background-color: #fff;
+		border: 1px solid $mainColor;
+	}
+	.partTtl{
+		margin-bottom: 25px;
+		color: $mainColor;
+		font-size: 1.8rem;
+		font-weight: bold;
+		text-align: center;
+	}
+	p{
+		font-size: 1.4rem;
+		line-height: 2;
+    strong{
+      font-weight: bold;
+      font-size: 1.6rem;
+      background: linear-gradient(transparent 90%, #FFADAE 60%);
+      @include mq{
+        font-size: 2.7rem;
+      }
+    }
+		small{
+			font-size: 1.2rem;
+		}
+	}
+	@include mq{
+		padding: (40/750) * 100vw;
+		.partTtl{
+			margin-bottom: (25/750) * 100vw;
+			font-size: 3.2rem;
+		}
+		p{
+			font-size: 2.8rem;
+			small{
+				font-size: 2.4rem;
+			}
+		}
+	}
+}
+
+.btn_shareBox{
+	background-color: $color1;
+	padding: 100px;
+	@include mq{
+		padding: (40/750) * 100vw (40/750) * 100vw (60/750) * 100vw;
+	}
+}
+.snsBox1{
+	display: flex;
+	justify-content: center;
+	a{
+		@include hvr;
+		& + a{
+			margin-left: 50px;
+		}
+	}
+	@include mq{
+		a{
+			width: (70/750) * 100vw;
+			& + a{
+				margin-left: (60/750) * 100vw;
+			}
+			img{
+				width: 100%;
+			}
+		}
+	}
+}
+
+/* SNS */
+
+.snsbox {
+  p {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    @include mq {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  ul {
+  display: flex;
+  justify-content: center;
+  @include mq {
+    padding-bottom: 5vw;
+  }
+  @include mq(xs) {
+    justify-content: space-between;
+    width: 28.5vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+    li {
+      transition: 0.3s;
+      text-decoration: none;
+      margin: 0 2rem;
+      @include mq {
+        margin: 0;
+      }
+    &:hover {
+      opacity: 0.7;
+    }
+    @include mq {
+      width: 25%;
+    }
+    @include mq(xs) {
+      width: 39%;
+  }
+    &:nth-child(2n+1) {
+      @include mq(xs) {
+        margin-left: 0;
+  }
+    }
+    &:nth-child(n+3) {
+      @include mq(xs) {
+        margin-top: 2.5vw;
+  }
+    }
+      a {
+        color: #333;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    span {
+      position: relative;
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      text-align: center;
+      @include mq {
+        font-size: 2rem;
+      }
+    &:after {
+      content: "";
+      display: inline-block;
+      background-image: url(https://www.subaru.jp/common/img/footer_outlink_icon.png);
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 13px;
+      vertical-align: middle;
+      margin-left: 3px;
+      @include mq {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    }
+  }
+    }
+  
+  a + a {
+    margin-left: 50px;
+    @include mq {
+      margin-left: 4vw;
+    }
+  }
+}
+}
+
+/*--------------------------------------
+ プラグイン
+---------------------------------------*/
+/* Slick */
+.slick-slider{margin-bottom: 0;}
+.slick-dots li{
+	background-color: #8c8c8c;
+	width: 15px;
+	height: 15px;
+	margin: 0 7.5px;
+	border-radius: 50%;
+	&.slick-active{
+		background-color: #4b972b;
+	}
+	@include mq{
+		width: (15/640) * 100vw;
+		height: (15/640) * 100vw;
+		margin: 0 (7.5/640) * 100vw;
+	}
+}
+#term {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 5000;
+    display: none;
+}
+#term .wrap {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    margin: 120px auto 0;
+  @include mq{
+    width: 100%;
+  }
+}
+#term .wrap .close {
+    position: absolute;
+    right: 0;
+    top: -60px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 40px;
+    text-decoration: none;
+  a{
+  }
+}
+#term .wrap .body {
+    background: #f1f5f7;
+    padding: 40px;
+    border: 1px solid #9eaebd;
+    overflow: scroll;
+}
+#term .wrap .body p {
+    font-size: 14px;
+    margin-bottom: 1em;
+    text-align: left;
+}

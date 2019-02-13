@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import "reset";//リセット
+
+//プラグイン
+
+//共通
+@import "layout";//全体的なレイアウト(ヘッダーとか)
+@import "common";//パーツ(ボタンなど)
+
+//ページ毎
+@import "top";//トップ
+@import "form";//入力
+@import "confirm";//入力
+@import "tabletform"
+

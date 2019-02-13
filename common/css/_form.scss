@@ -1,0 +1,558 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+
+.pageRegist{
+	.ttl3{
+		@include mq{
+			font-size: 3.2rem;
+		}
+	}
+}
+.IPassBox .q2Box{
+	padding-bottom: 30px;
+	position: relative;
+	table{
+		width: 100%;
+		font-size: 1.4rem;
+		@include mq{
+			font-size: 2.7rem;
+		}
+		tr{
+			td{
+				width:350px;
+				padding: 12px 0;
+				@include mq{
+					width: auto;
+				}
+			}
+		}
+	}
+	&.carOwn{
+		&:after{
+			display: none;
+		}
+	}
+}
+
+.errMsg{
+	display: inline-block;
+	color: #ee3333;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+.errTxt{
+	color: #ee3333; 
+}
+.errBox{
+	border: 2px solid #ee3333;
+	padding: 10px;
+	text-align: center;
+	color: #ee3333;
+	font-weight: bold;	
+	font-size: 1.6rem;
+	margin: 0 0 30px 0;
+	display: none;
+	@include mq{
+		font-size: 2.2rem;
+	}
+}
+.step-nav {
+	position: relative;
+	max-width: 830px;
+	margin: 0 auto 70px auto;
+	@include mq{
+		margin: 0 auto 30px auto;
+	}
+	&:before{
+		content: "";
+		height: 2px;
+		width: 80%;
+		background: $mainColor;
+		position: absolute;
+		left: 10%;
+		top: 31%;
+		z-index: 1;
+	}
+	&:after{
+		content: "";
+		height: 2px;
+		width: 80%;
+		background: $mainColor;
+		position: absolute;
+		left: 10%;
+		top: 34%;
+		z-index: 1;
+	}
+	ul{
+		max-width: 830px;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		z-index: 3;
+		&:before{
+
+		}
+		li{
+			width: 25%;
+			text-align: center;
+			@include mq{
+				width: 20%;
+			}
+			em{
+				font-style: normal;
+				font-weight: bold;
+			}
+			span{
+				display: block;
+				margin: 0 auto;
+				padding: 15px 0;
+				border: 2px solid $mainColor;
+				border-radius: 10px;
+				background: #FFF;
+				max-width: 80px;
+				color: $mainColor;
+				position: relative;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 500;
+				font-size: 1.4rem;
+				line-height: 1;
+				@include mq{
+					padding: 10px 0;
+					font-size: 2rem;
+				}
+				&.current{
+					background: $mainColor;
+					color: #FFF;
+					&:after{
+						background: $mainColor;
+					}
+				}
+				&:after{
+					content: "";
+					display: inline-block;
+					width: 18px;
+					height: 18px;
+					border-top: 2px solid $mainColor;
+					border-right: 2px solid $mainColor;
+					transform: rotate(135deg);
+					background: #FFF;
+					position: absolute;
+					bottom: -12px;
+					left: 30px;
+					@include mq{
+						left: 50%;
+						margin-left: -5px;
+						width:10px;
+						bottom: -8px;
+						height: 10px;
+					}
+				}
+				strong{
+					font-size:3rem; 
+					display: block;
+					@include mq{
+						font-size: 5rem;
+					}
+				}
+			}
+			p{
+				font-size: 1.6rem;
+				font-weight: bold;
+				padding-top: 25px;
+				@include mq{
+					font-size: 3rem;
+					padding-top: 20px;
+				}
+			}
+		}
+	}
+	
+}
+
+.icon-must{
+	color: #ee3333;
+}
+.IPassBox.input-table{
+	margin-bottom: 60px;
+	max-width: 700px;
+	@include mq{
+		margin-bottom: 40px;
+	}
+	& > table{
+		tr{
+			td{
+				width: 450px;
+				@include mq{
+					width: auto;
+				}
+			}
+		}
+	}
+	th{
+		position: relative;
+		padding-right: 70px;
+		@include mq{
+			padding-right: 0px;
+			display: block;
+		}
+		span{
+			display: inline-block;
+			position: absolute;
+			right: 0px;
+			margin-right: 20px;
+			color: #999999;
+			@include mq{
+				position: relative;
+				margin: 0 0 0 5px;
+			}
+			&.icon-must{
+				color: #ee3333;
+			}
+		}
+		
+	}
+	td{
+		@include mq{
+			display: block;
+			width: 100%;
+		}
+		p{
+			padding-left: 15px;
+		}
+	}
+	.col2{
+		width: 100%;
+		justify-content: space-between;
+		li{
+			width: 45%;
+		}
+	}
+	label{
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+	}
+		input[type="radio"]{
+			width: 20px;
+			height: 20px;
+			opacity: 0;
+		}
+	input[type="radio"]:checked + label.radio-label{
+		&:after{
+			content: "";
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			background: $mainColor;
+			border-radius: 50px;
+			margin-right: 5px;
+			vertical-align: middle;
+			margin-top: -1px;
+			position: absolute;
+			left: -15px;
+			top: 5px;
+		}
+	}
+	.radio-label{
+		cursor: pointer;
+		padding-left: 5px;
+		&:before{
+			content: "";
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			border: 1px solid $mainColor;
+			border-radius: 50px;
+			margin-right: 5px;
+			vertical-align: middle;
+			margin-top: -1px;
+			position: absolute;
+			left: -20px;
+			top: 0px;
+		}
+	}
+	.select-box{
+		width: 100%;
+		
+		max-width: 300px;
+		box-sizing: border-box;
+		position: relative;
+		line-height: 1;
+		margin-top: 5px;
+		border-radius: 10px;
+		&:after{
+			content:'';
+			position: absolute;
+			right:10px;
+			top: 13px;
+			width:0;
+			height:0;
+			border-right:5px solid transparent;
+			border-top:8px solid $mainColor;
+			border-left:5px solid transparent;
+			@include mq{
+				top: 12px;
+			}
+		}
+		&.no-icon2{
+			&:after{
+        right: 38%;
+			}
+			@include mq{
+				border-radius: 0px;
+			}
+		}
+		&.no-icon{
+			&:after{
+				display: none;
+			}
+			@include mq{
+				border-radius: 0px;
+			}
+		}
+		select,input{
+			border: none;
+			border: 1px solid $mainColor;	
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			appearance: none;
+			background: #fafcfc;
+			padding: 2px 10px 2px 15px;
+			line-height: 1.6;
+			box-sizing: border-box;
+			border-radius: 50px;
+			width: 100%;
+			margin-bottom: 5px;
+			&.on{
+				color: #333;
+			}
+		}
+	}
+	.btn{
+		&.btn-post{
+			font-weight: normal;
+			padding: 12px 15px;
+			font-size: 1.2rem;
+			text-decoration: none;
+			@include mq{
+				padding:1.4em 1.1em;
+				font-size: 1.8rem;
+			}
+		}
+	}
+}
+
+	.anc-title{
+		padding: 40px 0 30px;
+		font-weight: bold;
+		font-size: 1.5rem;
+    &.ttls{
+		font-size: 1.4rem;
+      font-weight: normal;
+      color: #333;
+      @include mq{
+        font-size: 2.7rem;
+      }
+    }
+		@include mq{
+			font-size: 2.7rem;
+		}
+	}
+.IPassBox.input-table.anc-table{
+	max-width: 700px;
+	&>table{
+		tr{
+			td{
+				width:350px;
+				@include mq{
+					width: auto;
+				}
+			}
+		}
+	}
+	optgroup{
+		display: none;
+	}
+	.carname-input{
+		display: none;
+	}
+	th{
+		p{
+			text-indent: -20px;
+			margin-left: 20px;
+			vertical-align: top;
+			position: relative;
+			span{
+				
+				top: 0px;
+				right: -70px;
+			}
+			@include mq{
+				margin-right: 0px;
+				span{
+					text-indent: 0px;
+					top: 0px;
+					right: 0px;
+
+					vertical-align: top;
+				}
+			}
+		}
+	}
+}
+.IPassBox.pass-table{
+	max-width:560px;
+	&>table{
+		tr{
+			td{
+				width: 330px;
+				@include mq{
+					width: auto;
+				}
+			}
+		}
+	}
+}
+.doui-text{
+	padding: 0 0 60px 0;
+	position: relative;
+	font-size: 1.6rem;
+	input{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+	@include mq{
+		padding: 0 0 30px 0;
+		font-size: 2.5rem;
+	}
+}
+input[type = "checkbox"]{
+	opacity: 0;
+}
+label.checkbox{
+	position: relative;
+	padding-left: 25px;
+	&:before{
+		content: "";
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		left: 0px;
+		top: 1px;
+		border: 1px solid $mainColor;
+		border-radius: 3px;
+	}
+}
+input[type="checkbox"]:checked + label.checkbox{
+	&:after{
+		content: "";
+		width: 10px;
+		position: absolute;
+		display: inline-block;
+		left: 3px;
+		top: 5px;
+		height:5px;
+		border-top: 1px solid $mainColor;
+		border-right: 1px solid $mainColor;
+		transform: rotate(130deg);
+	}
+}
+
+
+.form-btn{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 600px;
+	width: 90%;
+	margin: 60px auto 0 auto;
+	@include mq{
+		width: 100%;
+		margin-top: 0px;
+		flex-direction: column-reverse;
+	}
+	li{
+		width: 48%;
+		@include mq{
+			width: 100%;
+			margin-top: 20px;
+		}
+		a,input{
+			display: block;
+			text-align: center;
+			padding: 25px;
+			font-size: 1.8rem;
+			font-weight: bold;
+			@include mq{
+				font-size: 3rem;
+				padding: 20px 0;
+			}
+		}
+		.btn-next{
+			background: $mainColor;
+			position: relative;
+			&:after{
+				content:"";
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-top: 3px solid #FFF;
+				border-right: 3px solid #FFF;
+				transform: rotate(45deg);
+				position: absolute;
+				right: 20%;
+				top: 43%;
+			}
+      &.dis{
+        background-color: #000;
+        opacity: 0.3;
+        &:before{
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        input{
+          opacity: 0.5;
+        }
+        &:after{
+          opacity: 0.5;
+        }
+      }
+      input{
+        cursor: pointer;
+      }
+		}
+		
+		input{
+			-webkit-appearance: none;
+			appearance: none;
+			border: none;
+			display: block;
+			background: rgba(0,0,0,0);
+			height: 100%;
+			color: #FFF;
+			width: 100%;
+		}
+		.btn-back{
+			background: #CCC;
+			text-decoration: none;
+			color: #FFF;
+			position: relative;
+			&:before{
+				content:"";
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				margin-right: 10px;
+				border-top: 3px solid #FFF;
+				border-left: 3px solid #FFF;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}

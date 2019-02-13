@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@import "mq";
+@import "var";
+
+/*--------------------------------------
+ レイアウト
+---------------------------------------*/
+.wrapper{
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	@include mq{
+		margin-left: (40/750) * $per;
+		margin-right: (40/750) * $per;
+	}
+}
+
+
+.header{
+	margin-bottom: 70px;
+	.logo{
+		width: 130px;
+		@include hvr;
+		img{
+			width: 100%;
+		}
+	}
+	@include mq{
+		margin-bottom: (70/670) * $per;
+		.logo{
+			width: (180/750) * 100vw;
+			padding-top: (17/750) * 100vw;
+		}
+	}
+}
+
+.footer{
+	margin-top: 120px;
+	margin-bottom: 60px;
+	text-align: center;
+	.logo{
+		width: 120px;
+		margin:0 auto 10px;
+		img{
+			width: 100%;
+		}
+	}
+	#copyright{
+		font-size: 1.0rem;
+	}
+	@include mq{
+		margin-top: (120/750) * 100vw;
+		margin-bottom: (50/750) * 100vw;
+		.logo{
+			width: (213/750) * 100vw;
+			margin-bottom: (33/750) * 100vw;
+		}
+		#copyright{
+			font-size: 2.0rem;
+		}
+	}
+}
+
+
