@@ -94,9 +94,11 @@ function changeInspection(){
 	var y = $("#car_inspection_year").val();
 	if(y.match(/^2\d{3}$/)){
 		$("#car_inspection_month").prop("disabled",false);
+    $("#car_inspection_month").css("opacity", 1);
 	}else{
 		$("#car_inspection_month").val("");
 		$("#car_inspection_month").prop("disabled",true);
+		$("#car_inspection_month").css("opacity", 0.5);
 	}
 }
 

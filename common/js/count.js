@@ -135,10 +135,17 @@ function showRequireItemCount() {
     //車検時期
     var car_inspection_year = $("select[name='car_inspection_year']").val();
     var car_inspection_month = $("select[name='car_inspection_month']").val();
-    if (car_inspection_year) {
-    } else { //未選択
+    if (!car_inspection_year) { //未選択
       count = count + 1;
       $('.nokori-list').append('<li><a href="#car_inspection_year_tr">車検時期</a></li>');
+    } else {
+      if(car_inspection_year == "わからない/不明"){
+      }else{
+        if (!car_inspection_month) { //未選択
+          count = count + 1;
+          $('.nokori-list').append('<li><a href="#car_inspection_year_tr">車検時期</a></li>');
+        }
+      }
     }
   }
   

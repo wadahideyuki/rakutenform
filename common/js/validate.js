@@ -282,7 +282,7 @@ $(function () {
     validate_event(val);
     showRequireItemCount();
   });
-  $("input[name='review']").on('change',function (e) {
+  $("input[name='review']").on('focusout change',function (e) {
     var val = $(this).val();
     validate_q5(val);
     showRequireItemCount();
@@ -339,7 +339,7 @@ $(function () {
   //
   // SUBARUとのお付き合い
   //
-  $("input[name='has_dealer']").on('change',function (e) {
+  $("input[name='has_dealer']").on('focusout change',function (e) {
     var val = $(this).val();
     validate_q6(val);
     showRequireItemCount();
@@ -359,24 +359,24 @@ $(function () {
   //
   // 次回購入時のご意見
   //
-  $("input[name='purchase_time']").on('change',function (e) {
+  $("input[name='purchase_time']").on('focusout change',function (e) {
     var val = $(this).val();
     validate_purchase_time(val);
     showRequireItemCount();
   });
-  $("input[name='purchase_degree']").on('change',function (e) {
+  $("input[name='purchase_degree']").on('focusout change',function (e) {
     var val = $(this).val();
     validate_purchase_degree(val);
     showRequireItemCount();
   });
-  $("input[name='recommend']").on('change',function (e) {
+  $("input[name='recommend']").on('focusout change',function (e) {
     var val = $(this).val();
     validate_q7(val);
     showRequireItemCount();
   });
   
   //SUBARUIDの登録
-  $("input[name='is_entry']").on('change',function (e) {
+  $("input[name='is_entry']").on('focusout change',function (e) {
     var val = $(this).val();
     validate_is_entry(val);
     showRequireItemCount();
