@@ -22,6 +22,7 @@ $(function () {
     }
   });
 
+<<<<<<< HEAD
   //
   // メールアドレス
   //
@@ -64,16 +65,18 @@ $(function () {
   });
 
   //
+=======
+>>>>>>> a612c41c466bf7a9f952d95bd27c9b0c1c109ad9
   // 姓
   //
-  $("input[name='member_name1']").keyup(function (e) {
+  $("input[name='sei']").keyup(function (e) {
     if (e.keyCode == 9) {return true;}
     if (e.keyCode != 13) {return true;}
 
     var val = $(this).val();
     validate_member_name1(val);
   });
-  $("input[name='member_name1']").focusout(function (e) {
+  $("input[name='sei']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -84,14 +87,14 @@ $(function () {
   //
   //名
   //
-  $("input[name='member_name2']").keyup(function (e) {
+  $("input[name='mei']").keyup(function (e) {
     if (e.keyCode == 9) {return true;}
     if (e.keyCode != 13) {return true;}
 
     var val = $(this).val();
     validate_member_name2(val);
   });
-  $("input[name='member_name2']").focusout(function (e) {
+  $("input[name='mei']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -102,14 +105,14 @@ $(function () {
   //
   //セイ
   //
-  $("input[name='member_kana1']").keyup(function (e) {
+  $("input[name='sei_kana']").keyup(function (e) {
     if (e.keyCode == 9) {return true;}
     if (e.keyCode != 13) {return true;}
 
     var val = $(this).val();
     validate_kana1(val);
   });
-  $("input[name='member_kana1']").focusout(function (e) {
+  $("input[name='sei_kana']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -120,47 +123,77 @@ $(function () {
   //
   // メイ
   //
-  $("input[name='member_kana2']").keyup(function (e) {
+  $("input[name='mei_kana']").keyup(function (e) {
     if (e.keyCode == 9) {return true;}
     if (e.keyCode != 13) {return true;}
 
     var val = $(this).val();
     validate_kana2(val);
   });
-  $("input[name='member_kana2']").focusout(function (e) {
+  $("input[name='mei_kana']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
     validate_kana2(val);
     showRequireItemCount();
   });
-
-  //
-  // 電話番号
-  //
-  $("input[name='tel1']").keyup(function (e) {
-    return validate_tel();
-  });
-  $("input[name='tel1']").focusout(function (e) {
-    showRequireItemCount();
-    return validate_tel();
-  });
-
+  
   //
   //性別
   //
-  $("input[name='sex']").change(function (e) {
+  $("input[name='gender']").change(function (e) {
+    showRequireItemCount();
+  });
+  
+  //
+  //生年月日
+  //
+  $("select[name='birth_y']").change(function (e) {
+    var bmonth = $("select[name=bmonth]").children(':selected').val();
+    var bday = $("select[name=bday]").children(':selected').val();
+    if (!bmonth) {
+      return;
+    }
+    if (!bday) {
+      return;
+    }
+    validate_birth(e);
+    showRequireItemCount();
+  });
+  $("select[name='birth_m']").change(function (e) {
+    var byear = $("select[name=byear]").children(':selected').val();
+    var bday = $("select[name=bday]").children(':selected').val();
+    if (!byear) {
+      return;
+    }
+    if (!bday) {
+      return;
+    }
+    validate_birth(e);
+    showRequireItemCount();
+  });
+  $("select[name='birth_d']").change(function (e) {
+    var byear = $("select[name=byear]").children(':selected').val();
+    var bmonth = $("select[name=bmonth]").children(':selected').val();
+
+    if (!byear) {
+      return;
+    }
+    if (!bmonth) {
+      return;
+    }
+    validate_birth(e);
     showRequireItemCount();
   });
   
   //
   // 郵便番号
   //
-  $("input[name='zip1']").keyup(function (e) {
+  $("input[name='zip']").keyup(function (e) {
     return validate_zip();
     showRequireItemCount();
   });
-  $("input[name='zip1']").focusout(function (e) {
+  $("input[name='zip']").focusout(function (e) {
     validate_zip();
     showRequireItemCount();
   });
@@ -168,14 +201,14 @@ $(function () {
   //
   // 都道府県
   //
-  $("select[name='pref']").change(function (e) {
+  $("select[name='address01']").change(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
     validate_pref(val);
     showRequireItemCount();
   });
-  $("select[name='pref']").focusout(function (e) {
+  $("select[name='address01']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -186,13 +219,13 @@ $(function () {
   //
   // 市区町村
   //
-  $("input[name='address1']").keyup(function (e) {
+  $("input[name='address02']").keyup(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
     validate_address1(val);
   });
-  $("input[name='address1']").focusout(function (e) {
+  $("input[name='address02']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -203,13 +236,13 @@ $(function () {
   //
   // 町域
   //
-  $("input[name='address2']").keyup(function (e) {
+  $("input[name='address03']").keyup(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
     validate_address2(val);
   });
-  $("input[name='address2']").focusout(function (e) {
+  $("input[name='address03']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -220,13 +253,13 @@ $(function () {
   //
   // 番地
   //
-  $("input[name='address3']").keyup(function (e) {
+  $("input[name='address04']").keyup(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
     validate_address3(val);
   });
-  $("input[name='address3']").focusout(function (e) {
+  $("input[name='address04']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -234,60 +267,63 @@ $(function () {
     showRequireItemCount();
   });
 
+  
   //
-  //生年月日
+  // 電話番号
   //
-  $("select[name='byear']").change(function (e) {
-    var bmonth = $("select[name=bmonth]").children(':selected').val();
-    var bday = $("select[name=bday]").children(':selected').val();
-    if (!bmonth) {
-      return;
-    }
-    if (!bday) {
-      return;
-    }
-    validate_birth(e);
-    showRequireItemCount();
+  $("input[name='tel']").keyup(function (e) {
+    return validate_tel();
   });
-  $("select[name='bmonth']").change(function (e) {
-    var byear = $("select[name=byear]").children(':selected').val();
-    var bday = $("select[name=bday]").children(':selected').val();
-    if (!byear) {
-      return;
-    }
-    if (!bday) {
-      return;
-    }
-    validate_birth(e);
+  $("input[name='tel']").focusout(function (e) {
     showRequireItemCount();
+    return validate_tel();
   });
-  $("select[name='bday']").change(function (e) {
-    var byear = $("select[name=byear]").children(':selected').val();
-    var bmonth = $("select[name=bmonth]").children(':selected').val();
+  
+  
 
-    if (!byear) {
-      return;
-    }
-    if (!bmonth) {
-      return;
-    }
-    validate_birth(e);
+  //
+  // 職業
+  //
+  $("select[name='job']").on('focusout change',function (e) {
+    if (e.keyCode == 9) {return true;}
+
+    var val = $(this).val();
+    validate_job(val);
     showRequireItemCount();
   });
+  
+  //
+  // メールアドレス
+  //
+  $("input[name='mail']").focusout(function (e) {
+    if (e.keyCode == 9) {return true;}
+
+    var val = $(this).val();
+    validate_email(val);
+    showRequireItemCount();
+  });
+  
+  //
+  //案内の送付
+  //
+  $("input[name='annai']").change(function (e) {
+    showRequireItemCount();
+  });
+  
 
   
 
   //
   // イベント
   //
-  $("select[name='event']").on('focusout change',function (e) {
+  $("select[name='know']").on('focusout change',function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
     validate_event(val);
     showRequireItemCount();
   });
-  $("input[name='q5']").on('change',function (e) {
+  $("input[name='review']").on('change',function (e) {
     var val = $(this).val();
     validate_q5(val);
     showRequireItemCount();
@@ -314,27 +350,27 @@ $(function () {
   //
   // 車種名
   //
-  $("select[name='car_name']").change(function (e) {
+  $("select[name='car_id']").change(function (e) {
     if (e.keyCode == 9) {return true;}
 
-    var val = $("select[name='car_name']").val();
-    var val2 = $("input[name='car_name']").val();
+    var val = $("select[name='car_id']").val();
+    var val2 = $("input[name='car_other']").val();
     validate_carname(val, val2);
     showRequireItemCount();
   });
-  $("select[name='car_name']").focusout(function (e) {
+  $("select[name='car_id']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
 
-    var val = $("select[name='car_name']").val();
-    var val2 = $("input[name='car_name']").val();
+    var val = $("select[name='car_id']").val();
+    var val2 = $("input[name='car_other']").val();
     validate_carname(val, val2);
     showRequireItemCount();
   });
-  $("input[name='car_name']").blur(function (e) {
+  $("input[name='car_other']").blur(function (e) {
     if (e.keyCode == 9) {return true;}
 
-    var val = $("select[name='car_name']").val();
-    var val2 = $("input[name='car_name']").val();
+    var val = $("select[name='car_id']").val();
+    var val2 = $("input[name='car_other']").val();
     validate_carname(val, val2);
     showRequireItemCount();
   });  
@@ -359,18 +395,18 @@ $(function () {
   //
   // SUBARUとのお付き合い
   //
-  $("input[name='q6']").on('change',function (e) {
+  $("input[name='has_dealer']").on('change',function (e) {
     var val = $(this).val();
     validate_q6(val);
     showRequireItemCount();
   });
-  $("select[name='q6hanabai']").on('focusout change',function (e) {    
+  $("select[name='dealer']").on('focusout change',function (e) {    
     var val = $(this).val();
     validate_q6hanabai(val);
     console.log(val)
     showRequireItemCount();
   });
-  $("select[name='q6shop']").on('focusout change',function (e) {    
+  $("select[name='shop']").on('focusout change',function (e) {    
     var val = $(this).val();
     validate_q6shop(val);
     showRequireItemCount();
@@ -389,13 +425,39 @@ $(function () {
     validate_purchase_degree(val);
     showRequireItemCount();
   });
-  $("input[name='q7']").on('change',function (e) {
+  $("input[name='recommend']").on('change',function (e) {
     var val = $(this).val();
     validate_q7(val);
     showRequireItemCount();
   });
+  
+  //SUBARUIDの登録
+  $("input[name='is_entry']").on('change',function (e) {
+    var val = $(this).val();
+    validate_is_entry(val);
+    showRequireItemCount();
+  });
 
   
+  // パスワード
+  //
+  $("input[name='password']").focusout(function (e) {
+    if (e.keyCode == 9) {return true;}
+    var password = $('input[name=password]').val();
+    var password_confirm = $('input[name=c_password]').val();
+    validate_password(password, password_confirm);
+
+  });
+  $("input[name='c_password']").focusout(function (e) {
+    if (e.keyCode == 9) {return true;}
+    var password = $('input[name=password]').val();
+    var password_confirm = $('input[name=c_password]').val();
+    validate_password(password, password_confirm);
+    showRequireItemCount();
+  });
+
+  //
+
 
   
   
