@@ -295,19 +295,18 @@ function validate_q5(val) {
 function validate_maker(val) {
   if (!val) {
     $('#maker_error_front_blank').show();
+    $('#carname_error_front_blank').hide();
+    $('#carname_error_front_blank2').hide();
+    $('#inspection_error_front_blank').hide();
     return false;
   } else { //選択
     $('#maker_error_front_blank').hide();
 
     if (val == 99) { //所有してない
-      $(".makerRow").css({
-        opacity: 0.2
-      });
+      $('#carname_error_front_blank').hide();
+      $('#carname_error_front_blank2').hide();
+      $('#inspection_error_front_blank').hide();
     } else {
-      $(".makerRow").css({
-        opacity: 1
-      });
-
     }
   }
   return true;
@@ -316,10 +315,12 @@ function validate_maker(val) {
 //車種名
 function validate_carname(val, val2) {
   $('#carname_error_front_blank').hide();
-  if (val || val2) {
-    $('#carname_error_front_blank').hide();
-  } else {
+  $('#carname_error_front_blank2').hide();
+  if (!val) {
     $('#carname_error_front_blank').show();
+  }
+  if (!val2) {
+    $('#carname_error_front_blank2').show();
   }
   return true;
 }
@@ -327,13 +328,16 @@ function validate_carname(val, val2) {
 //車検時期
 function validate_inspection(val, val2) {
   $('#inspection_error_front_blank').hide();
-  if (!val) {
+  if (!val) {//未選択
     $('#inspection_error_front_blank').show();
-  } 
+  }else if(val == "わからない/不明"){
+  }else{
+    if (!val2) {//月が未選択
+      $('#inspection_error_front_blank').show();
+    }
+  }
   return true;
 }
-
-
 
 //SUBARUとのお付き合いについて
 function validate_q6(val) {

@@ -310,6 +310,14 @@ $(function () {
     validate_carname(val, val2);
     showRequireItemCount();
   });
+  $("input[name='car_other").on("focusout change blur", function (e) {
+    if (e.keyCode == 9) {return true;}
+
+    var val = $("select[name='car_id']").val();
+    var val2 = $("input[name='car_other']").val();
+    validate_carname(val, val2);
+    showRequireItemCount();
+  });
   
   //
   // 車検時期

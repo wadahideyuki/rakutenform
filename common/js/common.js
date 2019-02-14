@@ -43,7 +43,11 @@ $(function () {
 
 	$("#adrSrch").on('click',function(ev){
 		ev.preventDefault();
+    $("#pref_error_front_blank").hide();
+    $("#address1_error_front_blank").hide();
+    $("#address2_error_front_blank").hide();
 		AjaxZip3.zip2addr('zip','','address01','address02','address03','address04');
+    showRequireItemCount();
 	});
 	
 	$(".select-box select,.select-box").on("click", function () {
