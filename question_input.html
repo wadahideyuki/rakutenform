@@ -66,7 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h2 class="ttl3">1. お客様の情報をご記入ください。</h2>
         <div class="IPassBox input-table">
           <table>
-            <tr>
+            <tr id="must-name">
               <th>お名前<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div id="nameBox">
@@ -85,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-kana">
               <th>お名前カナ<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div id="kanaBox">
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-sex">
               <th>性別<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div class="genderBox" id="genderBox">
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-birth">
               <th>生年月日<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div id="birthBox">
@@ -309,7 +309,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-post">
               <th>郵便番号<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div id="posBox">
@@ -326,7 +326,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <p id="zip_error_front_num" class="error-text" style="display: none;">郵便番号は半角数字7桁で入力してください。</p>
               </td>
             </tr>
-            <tr>
+            <tr id="must-address">
               <th>住所（都道府県）<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div class="select-box">
@@ -384,7 +384,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <p id="pref_error_front_blank" class="error-text" style="display: none;">住所（都道府県）は必須項目です。</p>
               </td>
             </tr>
-            <tr>
+            <tr id="must-address2">
               <th>住所（市区町村）<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div id="address02Box">
@@ -403,7 +403,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-address3">
               <th>住所（番地）<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div id="address03Box">
@@ -421,7 +421,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-tel">
               <th>電話番号<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div id="address03Box2">
@@ -432,7 +432,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-job">
               <th>ご職業<span class="icon-must">[ 必須 ]</span></th>
               <td>
                 <div class="select-box W100P">
@@ -454,7 +454,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-email">
               <th id="email-block">
                 <div class="PR15">メールアドレス<span class="icon-must">[ 必須 ]</span></div>
               </th>
@@ -467,7 +467,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr id="must-annai">
               <th>
                 <div class="PR15">本アンケートでご回答頂いたお客様の個人情報をSUBARU販売店へ共有し、製品・サービス等のキャンペーン情報をご案内させていただいてもよろしいでしょうか？<span class="icon-must">[ 必須 ]</span></div>
               </th>
@@ -494,7 +494,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="qBox">
             <p class="anc-title">■イベントに参加された感想についてお聞かせ下さい </p>
             <table>
-              <tr>
+              <tr id="must-know">
                 <th>このイベントをどこで知りましたか？<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <div class="select-box">
@@ -541,7 +541,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p class="anc-title">■現在所有されているお車についてお聞かせ下さい</p>
             <p class="anc-title ttls">※お車を所有されている方、2台以上お持ちの方は主に乗っているお車についてお聞かせ下さい</p>
             <table>
-              <tr>
+              <tr id="must-maker">
                 <th>お持ちの車（メーカー名）<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <div class="select-box">
@@ -609,7 +609,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   </div>
                 </td>
               </tr>
-              <tr class="boxCar">
+              <tr id="must-car" class="boxCar">
                 <th>車種名<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <div class="select-box carname-select">
@@ -1455,7 +1455,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="qBox">
             <p class="anc-title">■SUBARUとのお付き合いについてお聞かせ下さい</p>
             <table>
-              <tr>
+              <tr id="must-hasDealer">
                 <th>現在お付き合いのあるSUBARU販売会社はありますか<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <ul>
@@ -1471,7 +1471,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <p id="q6_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
                 </td>
               </tr>
-              <tr class="boxDealer">
+              <tr id="must-dealer" class="boxDealer">
                 <th>「ある」を選んだ方は販売会社名をお聞かせください<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <div class="select-box">
@@ -1528,7 +1528,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   </div>
                 </td>
               </tr>
-              <tr class="boxDealer">
+              <tr id="must-dealerShop" class="boxDealer">
                 <th>「ある」を選んだ方は営業店名をお聞かせください<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <div class="select-box">
@@ -1546,7 +1546,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="qBox">
             <p class="anc-title">■次回購入時のご意見をお聞かせ下さい</p>
             <table>
-              <tr>
+              <tr id="must-purchaseTime">
                 <th>次回お車の購入を検討される時期をお聞かせください<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <div id="purchase_timeBox">
@@ -1576,7 +1576,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr id="must-purchaseDegree">
                 <th>次回お車を購入される際、SUBARU車をご検討になる度合をお聞かせ下さい<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <ul>
@@ -1600,7 +1600,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <p id="purchase_degree_error_front_blank" class="error-text" style="display: none;">回答は必須項目です。</p>
                 </td>
               </tr>
-              <tr>
+              <tr id="must-recommend">
                 <th>SUBARUを家族や友人にお勧めしたいと思いますか。「すすめたい」～「すすめたくない」の間でお答えください<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <ul>
@@ -1632,7 +1632,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <div class="qBox">
             <table>
-              <tr>
+              <tr id="must-entry">
                 <th>本アンケートでご回答頂いたお客様の個人情報をSUBARU IDとして登録させていただいてもよろしいでしょうか？<span class="icon-must">[ 必須 ]</span></th>
                 <td>
                   <ul>
@@ -1669,7 +1669,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <h2 class="ttl3">SUBARU IDで使用するパスワードを設定してください</h2>
             <div class="qBox">
               <table>
-                <tr>
+                <tr id="must-password">
                   <th class="W25P">パスワード<span class="icon-must">[ 必須 ]</span></th>
                   <td class="W65P">
                     <input type="password" class="input1 W80P" placeholder="" name="password" value="" autocomplete="new-password">
@@ -1698,7 +1698,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <label for="doui" class="checkbox">個人情報取扱規定に同意します<span class="icon-must">[ 必須 ]</span> </label>
             </p>
             <p id="conf_error_front" class="error-text" style="display: none;">必須項目です。</p>
-
           </div>
         </div>
         <dl class="nokori-txt">

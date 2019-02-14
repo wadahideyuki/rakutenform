@@ -58,12 +58,12 @@ function showRequireItemCount() {
   var e_addr2 = $("input[name='address03']").val();
   if (!e_addr1 || !e_addr2) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-address">住所（市区町村）</a></li>');
+    $('.nokori-list').append('<li><a href="#must-address2">住所（市区町村）</a></li>');
   }
   var e_addr3 = $("input[name='address04']").val();
   if (!e_addr3) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-address">住所（番地）</a></li>');
+    $('.nokori-list').append('<li><a href="#must-address3">住所（番地）</a></li>');
   }
 
   // 電話番号
@@ -82,7 +82,7 @@ function showRequireItemCount() {
   var job = $("select[name='job']").val();
   if (!job) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">職業</a></li>');
+    $('.nokori-list').append('<li><a href="#must-job">職業</a></li>');
   }
   //メールアドレス
   var email = $("input[name='mail']").val();
@@ -102,7 +102,7 @@ function showRequireItemCount() {
   var annai2 = $("input[name='annai']:eq(1)").prop('checked');
   if (!annai1 && !annai2) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">アンケートの送付</a></li>');
+    $('.nokori-list').append('<li><a href="#must-annai">アンケートの送付</a></li>');
   }
   
   
@@ -114,7 +114,7 @@ function showRequireItemCount() {
   var q53 = $("input[name='review']:eq(2)").prop('checked');
   if (!event || (!q51 && !q52 && !q53)) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">イベントに参加された感想</a></li>');
+    $('.nokori-list').append('<li><a href="#must-know">イベントに参加された感想</a></li>');
   }
   
   
@@ -122,7 +122,7 @@ function showRequireItemCount() {
   var maker = $("select[name='maker']").val();
   if (!maker) { //未選択
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">メーカー名</a></li>');
+    $('.nokori-list').append('<li><a href="#must-maker">メーカー名</a></li>');
   } else if (maker == 99) {
   } else {
     //車種名
@@ -130,14 +130,15 @@ function showRequireItemCount() {
     var carname2 = $("input[name='car_other']").val();
     if (carname1 || carname2) {} else { //未選択
       count = count + 1;
-      $('.nokori-list').append('<li><a href="#must-email">車種名</a></li>');
+      $('.nokori-list').append('<li><a href="#must-car">車種名</a></li>');
     }
     //車検時期
     var car_inspection_year = $("select[name='car_inspection_year']").val();
     var car_inspection_month = $("select[name='car_inspection_month']").val();
-    if (car_inspection_year) {} else { //未選択
+    if (car_inspection_year) {
+    } else { //未選択
       count = count + 1;
-      $('.nokori-list').append('<li><a href="#must-email">車検時期</a></li>');
+      $('.nokori-list').append('<li><a href="#car_inspection_year_tr">車検時期</a></li>');
     }
   }
   
@@ -148,18 +149,18 @@ function showRequireItemCount() {
   var q62 = $("input[name='has_dealer']:eq(1)").prop('checked');
   if (!q61 && !q62) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">SUBARUとのお付き合いについて</a></li>');
+    $('.nokori-list').append('<li><a href="#must-hasDealer">SUBARUとのお付き合いについて</a></li>');
   }
   if(q61){
     var q6hanabai = $("select[name='dealer']").val();
     if (!q6hanabai) {
       count = count + 1;
-      $('.nokori-list').append('<li><a href="#must-email">販売会社名</a></li>');
+      $('.nokori-list').append('<li><a href="#must-dealer">販売会社名</a></li>');
     }
     var q6shop = $("select[name='shop']").val();
     if (!q6shop) {
       count = count + 1;
-      $('.nokori-list').append('<li><a href="#must-email">営業店名</a></li>');
+      $('.nokori-list').append('<li><a href="#must-dealerShop">営業店名</a></li>');
     }
   }
   
@@ -172,7 +173,7 @@ function showRequireItemCount() {
   var purchase_time5 = $("input[name='purchase_time']:eq(4)").prop('checked');
   if (!purchase_time1 && !purchase_time2 && !purchase_time3 && !purchase_time4 && !purchase_time5) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">次回の購入検討時期</a></li>');
+    $('.nokori-list').append('<li><a href="#must-purchaseTime">次回の購入検討時期</a></li>');
   }
   
 
@@ -183,7 +184,7 @@ function showRequireItemCount() {
   var purchase_degree5 = $("input[name='purchase_degree']:eq(4)").prop('checked');
   if (!purchase_degree1 && !purchase_degree2 && !purchase_degree3 && !purchase_degree4 && !purchase_degree5) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">次回購入時のSUBARU車ご検討度合</a></li>');
+    $('.nokori-list').append('<li><a href="#must-purchaseDegree">次回購入時のSUBARU車ご検討度合</a></li>');
   }
   
   var q71 = $("input[name='recommend']:eq(0)").prop('checked');
@@ -193,7 +194,7 @@ function showRequireItemCount() {
   var q75 = $("input[name='recommend']:eq(4)").prop('checked');
   if (!q71 && !q72 && !q73　&& !q74　&& !q75) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">家族や友人へのおすすめ度</a></li>');
+    $('.nokori-list').append('<li><a href="#must-recommend">家族や友人へのおすすめ度</a></li>');
   }
   
   //SUBARUIDの登録
@@ -205,16 +206,16 @@ function showRequireItemCount() {
 
   if (!is_entry1 && !is_entry2) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-email">SUBARUIDの登録</a></li>');
+    $('.nokori-list').append('<li><a href="#must-entry">SUBARUIDの登録</a></li>');
   }else{
     if(is_entry1){//登録する
       if (!password || !password_confirm) {
         count = count + 1;
-        $('.nokori-list').append('<li><a href="#must-goconfirm">パスワード</a></li>');
+        $('.nokori-list').append('<li><a href="#must-password">パスワード</a></li>');
       }else{
         if (password != password_confirm) {
           count = count + 1;
-          $('.nokori-list').append('<li><a href="#must-goconfirm">パスワード</a></li>');
+          $('.nokori-list').append('<li><a href="#must-password">パスワード</a></li>');
         }
       }
     }else{//登録しない
@@ -225,7 +226,7 @@ function showRequireItemCount() {
   // 個人情報の取扱い
   if (!$('#doui').prop('checked')) {
     count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-goconfirm">個人情報の取扱い</a></li>');
+    $('.nokori-list').append('<li><a href="#douiBox">個人情報の取扱い</a></li>');
   }
 
   if (count > 0) {
