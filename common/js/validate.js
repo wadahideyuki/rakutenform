@@ -22,51 +22,6 @@ $(function () {
     }
   });
 
-<<<<<<< HEAD
-  //
-  // メールアドレス
-  //
-  $("input[name='pcmail']").focusout(function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var val = $(this).val();
-    validate_email(val);
-    showRequireItemCount();
-  });
-
-  //
-  // 職業
-  //
-  $("select[name='job']").on('focusout change',function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var val = $(this).val();
-    validate_job(val);
-    showRequireItemCount();
-  });
-  
-  // パスワード
-  //
-  $("input[name='password']").focusout(function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var password = $('input[name=password]').val();
-    var password_confirm = $('input[name=password_confirm]').val();
-    validate_password(password, password_confirm);
-    showRequireItemCount();
-  });
-  $("input[name='password_confirm']").focusout(function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var password = $('input[name=password]').val();
-    var password_confirm = $('input[name=password_confirm]').val();
-    validate_password(password, password_confirm);
-    showRequireItemCount();
-  });
-
-  //
-=======
->>>>>>> a612c41c466bf7a9f952d95bd27c9b0c1c109ad9
   // 姓
   //
   $("input[name='sei']").keyup(function (e) {
