@@ -359,19 +359,13 @@ $(function () {
   //
   // 次回購入時のご意見
   //
-  $("input[name='purchase_time']").on('focusout change',function (e) {
-    var val = $(this).val();
-    validate_purchase_time(val);
+  $("input[name='purchase_time']").change(function (e) {
     showRequireItemCount();
   });
   $("input[name='purchase_degree']").on('focusout change',function (e) {
-    var val = $(this).val();
-    validate_purchase_degree(val);
     showRequireItemCount();
   });
   $("input[name='recommend']").on('focusout change',function (e) {
-    var val = $(this).val();
-    validate_q7(val);
     showRequireItemCount();
   });
   
@@ -478,6 +472,10 @@ $(function () {
 
   
   showRequireItemCount();
+
+  $("body").click(function(){
+    showRequireItemCount();
+  });
 });
 
 var _googleRecapchaCheck = true;
