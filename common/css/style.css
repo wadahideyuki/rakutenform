@@ -168,13 +168,32 @@ overflow: hidden;
 /*--------------------------------------
  要素
 ---------------------------------------*/
+.nokori-txt {
+  margin-top: 40px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #d94d4e; }
+  .nokori-txt dt {
+    margin-bottom: 5px;
+    color: #d94d4e;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.8rem; }
+  .nokori-txt dd {
+    font-size: 1.4rem; }
+    .nokori-txt dd .nokori-list li {
+      display: inline-block;
+      padding: 3px 10px; }
+      .nokori-txt dd .nokori-list li a {
+        color: #d94d4e; }
+
 .nokori-item {
   background-color: #fff;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #2d9882;
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px; }
   .nokori-item em strong {
     color: #2d9882;
@@ -1378,7 +1397,6 @@ input[type="checkbox"]:checked + label.checkbox:after {
           font-size: 3rem;
           padding: 20px 0; } }
     .form-btn li .btn-next {
-      background: #2d9882;
       position: relative; }
       .form-btn li .btn-next:after {
         content: "";
@@ -1391,23 +1409,17 @@ input[type="checkbox"]:checked + label.checkbox:after {
         position: absolute;
         right: 20%;
         top: 43%; }
-      .form-btn li .btn-next.dis {
-        background-color: #000;
-        opacity: 0.3; }
-        .form-btn li .btn-next.dis:before {
-          content: "";
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1; }
-        .form-btn li .btn-next.dis input {
-          opacity: 0.5; }
-        .form-btn li .btn-next.dis:after {
-          opacity: 0.5; }
       .form-btn li .btn-next input {
+        background: #2d9882;
+        transition: 0.3s;
         cursor: pointer; }
+        .form-btn li .btn-next input:hover {
+          opacity: 0.7; }
+        .form-btn li .btn-next input[disabled] {
+          background-color: #ccc;
+          cursor: default; }
+          .form-btn li .btn-next input[disabled]:hover {
+            opacity: 1; }
     .form-btn li input {
       -webkit-appearance: none;
       appearance: none;

@@ -6,13 +6,38 @@
 /*--------------------------------------
  要素
 ---------------------------------------*/
+.nokori-txt{
+	margin-top: 40px;
+	padding: 15px;
+  text-align: center;
+	border: 1px solid #d94d4e;
+  dt {
+    margin-bottom: 5px;
+    color: #d94d4e;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.8rem;
+  }
+  dd {
+    font-size: 1.4rem;
+    .nokori-list {
+      li{
+        display: inline-block;
+        padding: 3px 10px;
+        a{
+          color: #d94d4e;
+        }
+      }
+    }
+  }
+}
 .nokori-item{
   background-color: #fff;
   padding: 10px;
   font-size: 14px;
   border: 1px solid $mainColor;
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   em{
     strong{

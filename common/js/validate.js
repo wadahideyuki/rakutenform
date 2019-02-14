@@ -52,7 +52,7 @@ $(function () {
     var password = $('input[name=password]').val();
     var password_confirm = $('input[name=password_confirm]').val();
     validate_password(password, password_confirm);
-
+    showRequireItemCount();
   });
   $("input[name='password_confirm']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}

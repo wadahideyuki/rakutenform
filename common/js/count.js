@@ -23,6 +23,11 @@ function showRequireItemCount() {
   if (!zip1) {
     count = count + 1;
     $('.nokori-list').append('<li><a href="#must-post">郵便番号</a></li>');
+  }else{
+    if (!zip1.match(/^[0-9]+$/) || zip1.length != 7) {
+      count = count + 1;
+      $('.nokori-list').append('<li><a href="#must-post">郵便番号</a></li>');
+    }
   }
 
   //住所
@@ -172,16 +177,13 @@ function showRequireItemCount() {
   
   
 
-  
-  
-
-  //　パスワード
+    //　パスワード
   var password = $('input[name=password]').val();
-    var password_confirm = $('input[name=password_confirm]').val();
-    if (!password || !password_confirm) {
-      count = count + 1;
-      $('.nokori-list').append('<li><a href="#must-goconfirm">パスワード</a></li>');
-    }
+  var password_confirm = $('input[name=password_confirm]').val();
+  if (!password || !password_confirm) {
+    count = count + 1;
+    $('.nokori-list').append('<li><a href="#must-goconfirm">パスワード</a></li>');
+  }
 
   // 個人情報の取扱い
   if (!$('#goconfirm1').prop('checked')) {
@@ -196,6 +198,7 @@ function showRequireItemCount() {
     $('.nokori-item').show();
     $('.nokori-list').show();
     $('#submit-button').hide();
+    $(".btn-next input").prop("disabled", true);
   } else {
     $('#nokori-button').hide();
     $('.nokori-item').hide();
@@ -203,5 +206,6 @@ function showRequireItemCount() {
     $('.nokori-list').empty();
     $('.nokori-list').hide();
     $('#submit-button').show();
+    $(".btn-next input").prop("disabled", false);
   }
 } //end showRequireItemCount
