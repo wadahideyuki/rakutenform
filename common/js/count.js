@@ -71,6 +71,11 @@ function showRequireItemCount() {
   if (!tel1) {
     count = count + 1;
     $('.nokori-list').append('<li><a href="#must-tel">電話番号</a></li>');
+  }else{
+    if (!tel1.match(/^[0-9]+$/)) {
+      count = count + 1;
+      $('.nokori-list').append('<li><a href="#must-tel">電話番号</a></li>');
+    }
   }
 
   //職業
@@ -84,6 +89,11 @@ function showRequireItemCount() {
   if (!email) {
     count = count + 1;
     $('.nokori-list').append('<li><a href="#must-email">メールアドレス</a></li>');
+  }else{
+    if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+      count = count + 1;
+      $('.nokori-list').append('<li><a href="#must-email">メールアドレス</a></li>');
+    }
   }
 
 
@@ -189,23 +199,31 @@ function showRequireItemCount() {
   //SUBARUIDの登録
   var is_entry1 = $("input[name='is_entry']:eq(0)").prop('checked');
   var is_entry2 = $("input[name='is_entry']:eq(1)").prop('checked');
+  //　パスワード
+  var password = $('input[name=password]').val();
+  var password_confirm = $('input[name=c_password]').val();
+
   if (!is_entry1 && !is_entry2) {
     count = count + 1;
     $('.nokori-list').append('<li><a href="#must-email">SUBARUIDの登録</a></li>');
+  }else{
+    if(is_entry1){//登録する
+      if (!password || !password_confirm) {
+        count = count + 1;
+        $('.nokori-list').append('<li><a href="#must-goconfirm">パスワード</a></li>');
+      }else{
+        if (password != password_confirm) {
+          count = count + 1;
+          $('.nokori-list').append('<li><a href="#must-goconfirm">パスワード</a></li>');
+        }
+      }
+    }else{//登録しない
+    }
   }
-  
-  
 
-    //　パスワード
-  var password = $('input[name=password]').val();
-  var password_confirm = $('input[name=password_confirm]').val();
-  if (!password || !password_confirm) {
-    count = count + 1;
-    $('.nokori-list').append('<li><a href="#must-goconfirm">パスワード</a></li>');
-  }
 
   // 個人情報の取扱い
-  if (!$('#goconfirm1').prop('checked')) {
+  if (!$('#doui').prop('checked')) {
     count = count + 1;
     $('.nokori-list').append('<li><a href="#must-goconfirm">個人情報の取扱い</a></li>');
   }

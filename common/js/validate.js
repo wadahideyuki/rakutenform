@@ -11,15 +11,13 @@ $(function () {
 
 
   /*---------- 起動 ----------*/
-  $('input[name="goconfirm"]:checkbox').change(function () {
-    showRequireItemCount();
-  });
-  $('input[name="goconfirm"]:checkbox').focusout(function (e) {
-    if (!$('input[name="goconfirm"]:checkbox').prop('checked')) {
+  $('input[name="doui"]:checkbox').on("focusout change", function () {
+    if (!$('input[name="doui"]:checkbox').prop('checked')) {
       $('#conf_error_front').show();
     } else {
       $('#conf_error_front').hide();
     }
+    showRequireItemCount();
   });
 
   // 姓
@@ -104,8 +102,8 @@ $(function () {
   //生年月日
   //
   $("select[name='birth_y']").change(function (e) {
-    var bmonth = $("select[name=bmonth]").children(':selected').val();
-    var bday = $("select[name=bday]").children(':selected').val();
+    var bmonth = $("select[name=birth_m]").children(':selected').val();
+    var bday = $("select[name=birth_d]").children(':selected').val();
     if (!bmonth) {
       return;
     }
@@ -116,8 +114,8 @@ $(function () {
     showRequireItemCount();
   });
   $("select[name='birth_m']").change(function (e) {
-    var byear = $("select[name=byear]").children(':selected').val();
-    var bday = $("select[name=bday]").children(':selected').val();
+    var byear = $("select[name=birth_y]").children(':selected').val();
+    var bday = $("select[name=birth_d]").children(':selected').val();
     if (!byear) {
       return;
     }
@@ -128,8 +126,8 @@ $(function () {
     showRequireItemCount();
   });
   $("select[name='birth_d']").change(function (e) {
-    var byear = $("select[name=byear]").children(':selected').val();
-    var bmonth = $("select[name=bmonth]").children(':selected').val();
+    var byear = $("select[name=birth_y]").children(':selected').val();
+    var bmonth = $("select[name=birth_m]").children(':selected').val();
 
     if (!byear) {
       return;
@@ -145,7 +143,7 @@ $(function () {
   // 郵便番号
   //
   $("input[name='zip']").keyup(function (e) {
-    return validate_zip();
+    validate_zip();
     showRequireItemCount();
   });
   $("input[name='zip']").focusout(function (e) {
@@ -179,6 +177,7 @@ $(function () {
 
     var val = $(this).val();
     validate_address1(val);
+    showRequireItemCount();
   });
   $("input[name='address02']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
@@ -196,6 +195,7 @@ $(function () {
 
     var val = $(this).val();
     validate_address2(val);
+    showRequireItemCount();
   });
   $("input[name='address03']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
@@ -213,6 +213,7 @@ $(function () {
 
     var val = $(this).val();
     validate_address3(val);
+    showRequireItemCount();
   });
   $("input[name='address04']").focusout(function (e) {
     if (e.keyCode == 9) {return true;}
@@ -227,6 +228,7 @@ $(function () {
   // 電話番号
   //
   $("input[name='tel']").keyup(function (e) {
+    showRequireItemCount();
     return validate_tel();
   });
   $("input[name='tel']").focusout(function (e) {
@@ -250,7 +252,7 @@ $(function () {
   //
   // メールアドレス
   //
-  $("input[name='mail']").focusout(function (e) {
+  $("input[name='mail']").on("keyup focusout", function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -261,7 +263,9 @@ $(function () {
   //
   //案内の送付
   //
-  $("input[name='annai']").change(function (e) {
+  $("input[name='annai']").on("focusout change", function (e) {
+    var val = $(this).val();
+//    validate_annai(val);
     showRequireItemCount();
   });
   
@@ -288,14 +292,7 @@ $(function () {
   //
   // メーカー
   //
-  $("select[name='maker']").change(function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var val = $(this).val();
-    validate_maker(val);
-    showRequireItemCount();
-  });
-  $("select[name='maker']").focusout(function (e) {
+  $("select[name='maker']").on("focusout change", function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $(this).val();
@@ -305,7 +302,7 @@ $(function () {
   //
   // 車種名
   //
-  $("select[name='car_id']").change(function (e) {
+  $("select[name='car_id']").on("focusout change blur", function (e) {
     if (e.keyCode == 9) {return true;}
 
     var val = $("select[name='car_id']").val();
@@ -313,22 +310,6 @@ $(function () {
     validate_carname(val, val2);
     showRequireItemCount();
   });
-  $("select[name='car_id']").focusout(function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var val = $("select[name='car_id']").val();
-    var val2 = $("input[name='car_other']").val();
-    validate_carname(val, val2);
-    showRequireItemCount();
-  });
-  $("input[name='car_other']").blur(function (e) {
-    if (e.keyCode == 9) {return true;}
-
-    var val = $("select[name='car_id']").val();
-    var val2 = $("input[name='car_other']").val();
-    validate_carname(val, val2);
-    showRequireItemCount();
-  });  
   
   //
   // 車検時期
@@ -430,7 +411,7 @@ $(function () {
 
     showRequireItemCount();
 
-    if (!$('input[name="goconfirm"]:checkbox').prop('checked') || !_googleRecapchaCheck) {
+    if (!$('input[name="doui"]:checkbox').prop('checked') || !_googleRecapchaCheck) {
       return false;
     }
 
@@ -451,14 +432,14 @@ $(function () {
       e_password = validate_password(password, password_confirm);
     }
 
-    e_email = validate_email($("input[name='pcmail']").val());
+    e_email = validate_email($("input[name='mail']").val());
 
     e_job = validate_job($("select[name='job']").val());
 
     e_event = validate_event($("select[name='event']").val());
 
     e_maker = validate_maker($("select[name='maker']").val());
-    e_carname = validate_carname($("select[name='maker']").val(), $("input[name='maker']").val());
+    e_carname = validate_carname($("select[name='car_id']").val(), $("input[name='car_other']").val());
     e_inspection_year = validate_inspection_year($("select[name='car_inspection_year']").val());
     e_inspection_month = validate_inspection_month($("select[name='car_inspection_month']").val());
 

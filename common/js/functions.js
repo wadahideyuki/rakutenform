@@ -87,12 +87,10 @@ function validate_email(val) {
   $('#pcmail_error_front_blank').hide();
   $('#pcmail_error_front_email').hide();
   if (!val) {
-    $('#pcmail_error').hide();
     $('#pcmail_error_front_blank').show();
     return false;
   } else {
     if (!val.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-      $('#pcmail_error').hide();
       $('#pcmail_error_front_email').show();
       return false;
     } else {
@@ -107,9 +105,9 @@ function validate_email(val) {
 
 
 function validate_birth(e) {
-  var byear = $("select[name=byear]").children(':selected').val();
-  var bmonth = $("select[name=bmonth]").children(':selected').val();
-  var bday = $("select[name=bday]").children(':selected').val();
+  var byear = $("select[name=birth_y]").children(':selected').val();
+  var bmonth = $("select[name=birth_m]").children(':selected').val();
+  var bday = $("select[name=birth_d]").children(':selected').val();
 
   $('#birth_error_front').hide();
   if (!byear || !bmonth || !bday) {
@@ -122,7 +120,7 @@ function validate_birth(e) {
 
 
 function validate_zip() {
-  var zip1 = $("input[name='zip1']").val();
+  var zip1 = $("input[name='zip']").val();
 
   $('#zip_error_front_blank').hide();
   $('#zip_error_front_num').hide();
@@ -161,7 +159,8 @@ function validate_pref(val) {
   return true;
 }
 
-function validate_address1(val) {
+//住所
+function validate_address1(val) {//県
   $('#address1_error_front_blank').hide();
   if (!val) {
     $('#address1_error').hide();
@@ -173,7 +172,7 @@ function validate_address1(val) {
   return true;
 }
 
-function validate_address2(val) {
+function validate_address2(val) {//市区町村
   $('#address2_error_front_blank').hide();
   if (!val) {
     $('#address2_error').hide();
@@ -185,7 +184,7 @@ function validate_address2(val) {
   return true;
 }
 
-function validate_address3(val) {
+function validate_address3(val) {//番地
   $('#address3_error_front_blank').hide();
   if (!val) {
     $('#address3_error').hide();
@@ -199,7 +198,7 @@ function validate_address3(val) {
 
 
 function validate_tel() {
-  var tel1 = $("input[name='tel1']").val();
+  var tel1 = $("input[name='tel']").val();
 
   $('#tel_error_front_blank').hide();
   $('#tel_error_front_num').hide();
@@ -263,8 +262,9 @@ function isIncludeHanNumAlpha(obj) {
 
 //案内の送付
 function validate_annai(val) {
+  $('#annai1_error_front_blank').hide();
   if (!val) {
-    $('#annai_error_front_blank').show();
+    $('#annai1_error_front_blank').show();
     return false;
   }
   return true;
@@ -275,9 +275,7 @@ function validate_annai(val) {
 //イベント
 function validate_event(val) {
   $('#event_error_front_blank').hide();
-  $('#event_error_front_event').hide();
   if (!val) {
-    //$('#event_error').hide();
     $('#event_error_front_blank').show();
     return false;
   }
@@ -315,7 +313,7 @@ function validate_maker(val) {
   return true;
 }
 
-//現在所有している車
+//車種名
 function validate_carname(val, val2) {
   $('#carname_error_front_blank').hide();
   if (val || val2) {

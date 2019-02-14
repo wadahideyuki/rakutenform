@@ -106,6 +106,8 @@ function changeDealer(){
 		$("#sel_shop").val("");
 		$(".boxDealer select").prop("disabled",true);
 		$(".boxDealer").addClass("disable_box");
+		$("#q6hanabai_error_front_blank").hide();
+		$("#q6shop_error_front_blank").hide();
 	}
 }
 

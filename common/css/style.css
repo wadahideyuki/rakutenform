@@ -194,7 +194,8 @@ overflow: hidden;
   border: 1px solid #2d9882;
   position: fixed;
   bottom: 20px;
-  right: 20px; }
+  right: 20px;
+  z-index: 1; }
   .nokori-item em strong {
     color: #2d9882;
     font-size: 1.5em; }
