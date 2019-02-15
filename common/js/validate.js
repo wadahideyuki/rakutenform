@@ -1,4 +1,9 @@
 $(function () {
+  
+  setInterval(function(){
+    showRequireItemCount();
+    }, 100);
+  
   $.fn.autoKana('#member_name1', '#member_kana1', {
     katakana: true
   });
