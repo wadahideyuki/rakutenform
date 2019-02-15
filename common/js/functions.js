@@ -104,7 +104,7 @@ function validate_email(val) {
 
 
 
-function validate_birth(e) {
+function validate_birth() {
   var byear = $("select[name=birth_y]").children(':selected').val();
   var bmonth = $("select[name=birth_m]").children(':selected').val();
   var bday = $("select[name=birth_d]").children(':selected').val();
