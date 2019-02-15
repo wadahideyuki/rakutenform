@@ -179,8 +179,14 @@ overflow: hidden;
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 2.8rem; }
+    @media screen and (max-width: 767px) {
+      .nokori-txt dt {
+        font-size: 2rem; } }
   .nokori-txt dd {
     font-size: 1.4rem; }
+    @media screen and (max-width: 767px) {
+      .nokori-txt dd {
+        font-size: 1.8rem; } }
     .nokori-txt dd .nokori-list li {
       display: inline-block;
       padding: 3px 10px; }
